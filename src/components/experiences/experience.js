@@ -143,7 +143,7 @@ const Experience = () => {
               <ul className={List}>
                 <li>Co-developed a stock prediction tool for Dow Jones Companies, enhancing investment decision-making capabilities and achieving an 85% prediction accuracy rate</li>
                 <li>Employed the yfinance library to extract and analyze 5 years of historical stock data for 20 Dow Jones Companies, enabling comprehensive data analysis</li>
-                <li>Applied Plotly to craft interactive data visualizations, increasing user engagement by 20$</li>
+                <li>Applied Plotly to craft interactive data visualizations, increasing user engagement by 20%</li>
                 <li>Implemented automated data pipelines using yfinance API</li>
               </ul>
               <ul className={ChipWrapper}>
