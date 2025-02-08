@@ -1,10 +1,18 @@
+/*-------------------------------------------------------*/
+/* Home Page */
 export const Home = `
 	pt-10
 	lg:w-1/2
 `;
+
+/*-------------------------------------------------------*/
+/* For Pages */
 export const PageContainer = `
 	pt-10
 `;
+
+/*-------------------------------------------------------*/
+/* Global Styles */
 export const BackgroundContainer = `
 	bg-slate-900 
 	leading-relaxed 
@@ -64,6 +72,9 @@ export const GradientSvg1 = `
 export const GradientSvg2 = `
 	h-full w-full
 `;
+
+/*-------------------------------------------------------*/
+/* Header Styles */
 export const HeaderContainer = `
 	lg:sticky
 	lg:top-0
@@ -92,6 +103,9 @@ export const HeaderP = `
 	max-w-xs
 	leading-normal
 `;
+
+/*-------------------------------------------------------*/
+/* Navigation Styles */
 export const Nav = `
 	lg:block
 `;
@@ -125,6 +139,9 @@ export const NavSpanText = `
 	group-hover:text-slate-200 
 	group-focus-visible:text-slate-200
 `;
+
+/*-------------------------------------------------------*/
+/* Media Styles */
 export const MediaItems = `
 	mt-8
 	flex
@@ -148,6 +165,9 @@ export const ActiveSpanText = `
 	tracking-widest 
 	text-slate-200 
 `;
+
+/*-------------------------------------------------------*/
+/* Section Styles */
 export const Section = `
 	md:mb-24
 	lg:mb-20
@@ -181,6 +201,8 @@ export const Svg = `
 	h-4 w-4
 `;
 
+/*-------------------------------------------------------*/
+/* Component Styles */
 export const Spacing = `
 	mb-10
 `;
@@ -220,8 +242,8 @@ export const Info = `
 `;
 export const SectionH3 = `
 	font-medium 
-    leading-snug 
-    text-slate-200
+	leading-snug 
+	text-slate-200
 `;
 export const H3Container = `
 	group/link 
@@ -240,26 +262,26 @@ export const H3Span = `
 `;
 export const LinkSvg = `
 	ml-1 
-    inline-block 
-    h-4 w-4 
-    shrink-0 
-    translate-y-px 
-    transition-transform 
-    group-hover/link:-translate-y-1 
-    group-hover/link:translate-x-1 
-    group-focus-visible/link:-translate-y-1 
-    group-focus-visible/link:translate-x-1 
-    motion-reduce:transition-none
+	inline-block 
+	h-4 w-4 
+	shrink-0 
+	translate-y-px 
+	transition-transform 
+	group-hover/link:-translate-y-1 
+	group-hover/link:translate-x-1 
+	group-focus-visible/link:-translate-y-1 
+	group-focus-visible/link:translate-x-1 
+	motion-reduce:transition-none
 `;
 export const InfoP = `
 	mt-2 
-    text-sm 
-    leading-normal
+	text-sm 
+	leading-normal
 `;
 export const ChipWrapper = `
 	mt-2
-    flex
-    flex-wrap
+	flex
+	flex-wrap
 `;
 export const Chip = `
 	flex 
@@ -277,44 +299,44 @@ export const ChipText = `
 	mr-2
 `;
 export const ChipImage = `
-    w-6 h-6
-    lg:w-5 lg:h-5
-    mt-1 mb-1
-    lg:mt-0 lg:mb-0
+	w-6 h-6
+	lg:w-5 lg:h-5
+	mt-1 mb-1
+	lg:mt-0 lg:mb-0
 `;
 export const LinkWrapper = `
-    group 
-    inline-flex 
-    items-center 
-    font-medium 
-    font-semibold 
-    leading-tight 
-    text-slate-200
+	group 
+	inline-flex 
+	items-center 
+	font-medium 
+	font-semibold 
+	leading-tight 
+	text-slate-200
 `;
 export const LinkText = `
-    border-b 
-    border-transparent 
-    group-hover:border-sky-400 
+	border-b 
+	border-transparent 
+	group-hover:border-sky-400 
 `;
 export const RightArrowSvg = `
-    ml-1 
-    inline-block 
-    h-4 w-4 
-    shrink-0 
-    -translate-y-px 
-    transition-transform 
-    group-hover:translate-x-2 
-    group-focus-visible:translate-x-2 
+	ml-1 
+	inline-block 
+	h-4 w-4 
+	shrink-0 
+	-translate-y-px 
+	transition-transform 
+	group-hover:translate-x-2 
+	group-focus-visible:translate-x-2 
 `;
 export const LeftArrowSvg = `
-    ml-1 
-    inline-block 
-    h-4 w-4 
-    shrink-0 
-    -translate-y-px 
-    transition-transform 
-    group-hover:-translate-x-2 
-    group-focus-visible:-translate-x-2 
+	ml-1 
+	inline-block 
+	h-4 w-4 
+	shrink-0 
+	-translate-y-px 
+	transition-transform 
+	group-hover:-translate-x-2 
+	group-focus-visible:-translate-x-2 
 `;
 export const Image = `
 	rounded 
@@ -333,6 +355,8 @@ export const Image = `
 	mb-3
 `;
 
+/*-------------------------------------------------------*/
+/* Project Containers */
 export const ProjContainer  = `
 	grid
 	md:grid-cols-2
@@ -374,6 +398,9 @@ export const Footer = `
 	text-slate-500 
 	sm:pb-0
 `;
+
+/*-------------------------------------------------------*/
+/* 404 Page */
 export const Container404 = `
 	w-full 
 	h-screen 
@@ -400,6 +427,9 @@ export const Text404 = `
 	mt-4 
 	rounded-xl
 `;
+
+/*-------------------------------------------------------*/
+/* Contact Page */
 export const ScrollWrapper = `
 	relative 
 	h-1 
@@ -411,7 +441,6 @@ export const Scroll = `
 	h-full 
 	bg-blue-400
 `;
-
 export const FormMain = `
 	pt-10 
 	lg:w-1/2 
@@ -454,6 +483,59 @@ export const FormButton = `
 	mt-4 
 	rounded-xl
 `;
+
+/*-------------------------------------------------------*/
+/* Experience Page */
+export const SingleBlockContainer = `
+	flex
+	flex-col
+`;
+export const Timeline = `
+	absolute 
+	left-8 
+	top-0 
+	h-full 
+	w-0.5 
+	bg-slate-700/50
+`;
+export const TimelineDot = `
+	absolute 
+	left-8 
+	top-6 
+	-ml-1.5 
+	h-3 w-3 
+	rounded-full 
+	ring-4 
+	ring-slate-800
+`;
+export const TimelineDot2 = `
+	inline-block 
+	rounded-full 
+	bg-slate-800/50 
+	px-3 py-1 
+	text-sm 
+	text-slate-300
+`;
+export const Details = `
+	relative 
+	rounded-xl 
+	border 
+	border-slate-700/50 
+	bg-slate-800/30 
+	p-6 transition-all 
+	hover:border-blue-500/30 
+	hover:bg-slate-800/50
+`;
+export const List = `
+	ml-4 mt-3 
+	list-disc 
+	space-y-2 
+	text-sm 
+	text-slate-400
+`
+
+/*-------------------------------------------------------*/
+/* Assignment Page - CS 506 */
 export const AssignmentCard = `
 	border 
 	border-slate-700 
@@ -462,11 +544,8 @@ export const AssignmentCard = `
 	shadow-lg 
 	bg-slate-800 
 	hover:bg-slate-700 
-	
-	
 	transition-colors
 `;
-
 export const Video = `
 	relative 
 	pb-[56.25%] 
@@ -480,9 +559,4 @@ export const Iframe = `
 	top-0 left-0 
 	w-full h-full
 	rounded-lg
-`;
-
-export const SingleBlockContainer = `
-	flex
-	flex-col
 `;
