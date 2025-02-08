@@ -18,6 +18,138 @@ const Junior = () => {
   	return (
 		<div>
 			<ul className={ProjContainer}>
+
+				{/* CS 541 */}
+				<li className={Spacing}>
+					<div className={ProjWrapper}>
+						<div className={ProjDiv} />
+						<div className={Time}>
+							Spring
+						</div>
+						<div className={Info}>
+							<h3>
+								<a className={H3Container} href='https://www.bu.edu/academics/cas/courses/cas-cs-541/' target='_blank' rel='noreferrer'>
+									<span className={H3Span} />
+									<span>
+										CS 541 - Applied Machine Learning
+										<span className='inline-block'>
+											<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' className={LinkSvg}>
+												<path fillRule='evenodd' d='M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z' clipRule='evenodd' />
+											</svg>
+										</span>
+									</span>
+								</a>
+							</h3>
+							<p className={InfoP}>
+								Covers practical skills in machine learning including techniques for clustering, classification, regression, feature selection, and model compression. Emphasizes hands-on application of methods via programming on real- world datasets.
+							</p>
+							<ul className={ChipWrapper}>
+								<li className='mr-1.5 mt-2'>
+									<div className={Chip}>Python</div>
+								</li>
+								<li className='mr-1.5 mt-2'>
+									<div className={Chip}>Machine Learning</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+
+				{/* CS 519 */}
+				<li className={Spacing}>
+					<div className={ProjWrapper}>
+						<div className={ProjDiv} />
+						<div className={Time}>
+							Spring
+						</div>
+						<div className={Info}>
+							<h3>
+								<a className={H3Container} href='https://www.bu.edu/academics/cas/courses/cas-cs-506/' target='_blank' rel='noreferrer'>
+									<span className={H3Span} />
+									<span>
+										CS 519 - Spark! Software Engineering X-Lab Practicum
+										<span className='inline-block'>
+											<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' className={LinkSvg}>
+												<path fillRule='evenodd' d='M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z' clipRule='evenodd' />
+											</svg>
+										</span>
+									</span>
+								</a>
+							</h3>
+							<p className={InfoP}>
+								This course offers students in computing disciplines the opportunity to apply their programming and system development skills by working on real-world projects provided from partnering organizations within and outside of BU, which are curated by Spark! The course offers a range of project options where students can improve their technical skills, while also gaining the soft skills necessary to deliver projects aligned to the partner's goals. These include teamwork and communications skills and software development processes.
+							</p>
+							<ul className={ChipWrapper}>
+							</ul>
+						</div>
+					</div>
+				</li>
+
+				{/* CS 501 */}
+				<li className={Spacing}>
+					<div className={ProjWrapper}>
+						<div className={ProjDiv} />
+						<div className={Time}>
+							Spring
+						</div>
+						<div className={Info}>
+							<h3>
+								<a className={H3Container} href='https://www.bu.edu/academics/cas/courses/cas-cs-506/' target='_blank' rel='noreferrer'>
+									<span className={H3Span} />
+									<span>
+										CS 501 - Mobile Application Development
+										<span className='inline-block'>
+											<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' className={LinkSvg}>
+												<path fillRule='evenodd' d='M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z' clipRule='evenodd' />
+											</svg>
+										</span>
+									</span>
+								</a>
+							</h3>
+							<p className={InfoP}>
+								Students will utilize agile software engineering practices in this hands-on course to design and implement mobile applications using Kotlin, JetPack, and the Android SDK. Students will initially implement several small mobile applications utilizing core android technologies, after which students will be grouped into small teams of 2-3, collaborating on a larger final project. Topics will include UI development, navigation, using third party APIs, data persistence, and gestures.
+							</p>
+							<ul className={ChipWrapper}>
+								<li className='mr-1.5 mt-2'>
+									<div className={Chip}>Kotlin</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+
+				{/* CS 365 */}
+				<li className={Spacing}>
+					<div className={ProjWrapper}>
+						<div className={ProjDiv} />
+						<div className={Time}>
+							Spring
+						</div>
+						<div className={Info}>
+							<h3>
+								<a className={H3Container} href='https://www.bu.edu/academics/cas/courses/cas-cs-506/' target='_blank' rel='noreferrer'>
+									<span className={H3Span} />
+									<span>
+										CS 365 - Foundations of Data Science
+										<span className='inline-block'>
+											<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' className={LinkSvg}>
+												<path fillRule='evenodd' d='M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z' clipRule='evenodd' />
+											</svg>
+										</span>
+									</span>
+								</a>
+							</h3>
+							<p className={InfoP}>
+								Lays the foundation towards more advanced data-intensive classes, such as Data Science, Machine Learning, Data Mining. The course provides an understanding of the fundamentals and the practical implications of concepts. It covers both theoretical skills as well as working/practical knowledge.
+							</p>
+							<ul className={ChipWrapper}>
+								<li className='mr-1.5 mt-2'>
+									<div className={Chip}>Python</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
 				
 				{/* CS 506 */}
 				<li className={Spacing}>
