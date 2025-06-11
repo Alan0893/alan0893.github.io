@@ -14,12 +14,14 @@ export const PageContainer = `
 /*-------------------------------------------------------*/
 /* Global Styles */
 export const BackgroundContainer = `
-	bg-slate-900 
+	bg-gradient-to-br from-gray-900 via-slate-900 to-gray-950
 	leading-relaxed 
-	text-slate-400 
+	text-slate-300
 	antialiased 
-	selection:bg-sky-300 
-	selection:text-sky-900
+	selection:bg-indigo-300 
+	selection:text-indigo-900
+	transition-colors
+	duration-300
 `;
 export const Mouse = `
 	pointer-events-none 
@@ -34,8 +36,10 @@ export const ChildWrapper = `
 	max-w-screen-xl 
 	px-6 py-12 
 	font-sans 
+	backdrop-blur-sm
 	md:px-12 md:py-20 
 	lg:px-24 lg:py-0
+	motion-safe:animate-fadeIn
 `;
 export const ChildWrapper2 = `
 	mx-auto 
@@ -56,13 +60,19 @@ export const GradientContainer = `
 export const GradientWrapper1 = `
 	fixed
 	-top-40
-	blur-2xl
+	blur-3xl
+	opacity-60
+	mix-blend-normal
+	animate-float
 `;
 export const GradientWrapper2 = `
 	fixed 
 	inset-0
 	blur-3xl
 	pointer-events-none
+	opacity-50
+	mix-blend-soft-light
+	animate-float
 `;
 export const GradientSvg1 = `
 	relative
@@ -88,8 +98,13 @@ export const HeaderContainer = `
 export const HeaderH1 = `
 	text-4xl
 	font-bold
-	text-slate-200
+	text-transparent
+	bg-clip-text
+	bg-gradient-to-r from-indigo-200 to-slate-200
 	sm:text-5xl
+	hover:scale-[1.01]
+	transition-transform
+	duration-300
 `;
 export const HeaderH2 = `
 	mt-3
