@@ -1,0 +1,95 @@
+{
+  "experiences": [
+		{
+      "title": "Incoming Software Engineer Intern",
+      "company": "RedHat",
+      "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQEto-TydTTIfQ/company-logo_200_200/company-logo_200_200/0/1630583759577/red_hat_logo?e=1769040000&v=beta&t=EAPKnlJf3yS9mDPf6HcBd7gFrJZD-y1wp0EsOjsIjGU",
+      "url": "https://www.redhat.com/en",
+      "date": "May 2026 - Aug 2026",
+      "current": false,
+      "description": [
+        "AI & ML"
+      ],
+      "skills": [],
+      "color": "from-slate-500 to-slate-600"
+    },
+		{
+      "title": "Software Engineer Intern",
+      "company": "BU Spark!",
+      "logo": "https://www.bu.edu/spark/files/2023/08/logo.png",
+      "url": "https://www.bu.edu/spark/",
+      "date": "May 2025 - Present",
+      "current": false,
+      "description": [
+        "Updating core functionality for a digital herbarium platform including rapid data entry workflows, batch processing capabilities for large-scale specimen digitization, AI-powered transcription with configurable machine learning models, and containerized deployment architecture to streamline researchers' specimen cataloging and data management processes."
+      ],
+      "skills": ["Containerization", "PHP", "MySQL"],
+      "color": "from-slate-500 to-slate-600"
+    },
+		{
+      "title": "Fullstack Engineer Intern",
+      "company": "BU Spark!",
+      "logo": "https://www.bu.edu/spark/files/2023/08/logo.png",
+      "url": "https://www.bu.edu/spark/",
+      "date": "May 2025 - Present",
+      "current": false,
+      "description": [
+        "Building a police accountability platform that aggregates Boston Police Department data into organized officer profiles and activity reports, providing transparent community access to local policing information."
+      ],
+      "skills": ["NextJS", "PostgreSQL", "GraphQL"],
+      "color": "from-slate-500 to-slate-600"
+    },
+    {
+      "title": "Machine Learning Engineer",
+      "company": "BU Spark!",
+      "logo": "https://www.bu.edu/spark/files/2023/08/logo.png",
+      "url": "https://www.bu.edu/spark/",
+      "date": "Sep. 2025 - Dec. 2025",
+      "current": false,
+      "description": [
+        "Building an AI pipeline to digitize and transcribe historical property records for the Massachusetts Registry of Deeds, extracting structured data from handwritten index books dating back to the 1600s. Working with OCR and VLMs to create searchable archives for researchers and the public."
+			],
+      "skills": ["OCR", "VLMs"],
+      "color": "from-slate-500 to-slate-600"
+    },
+    {
+      "title": "Fullstack Engineer Intern",
+      "company": "BU Spark!",
+      "logo": "https://www.bu.edu/spark/files/2023/08/logo.png",
+      "url": "https://www.bu.edu/spark/",
+      "date": "May. 2025 - Jul. 2025",
+      "current": false,
+      "description": [
+        "Engineered a comprehensive digital mapping platform for the City of Boston that streamlines access to LGBTQ+ community resources, featuring interactive neighborhood-based search capabilities and real-time resource information updates."
+			],
+      "skills": ["NextJS", "Firebase"],
+      "color": "from-slate-500 to-slate-600"
+    },
+		{
+      "title": "Software Engineer",
+      "company": "BU Spark!",
+      "logo": "https://www.bu.edu/spark/files/2023/08/logo.png",
+      "url": "https://www.bu.edu/spark/",
+      "date": "Jan 2025 - May 2025",
+      "current": false,
+      "description": [
+        "Developed a secure web interface for researchers to remotely submit 3D printing and testing tasks to an autonomous robotics system that optimizes mechanical properties for applications like helmet pads and crumple zones."
+      ],
+      "skills": ["NextJS", "FastAPI", "MySQL"],
+      "color": "from-slate-500 to-slate-600"
+    },
+		{
+      "title": "Software Engineer Intern",
+      "company": "Subletr",
+      "logo": "https://media.licdn.com/dms/image/v2/D4E0BAQH-kM_sTlWJiA/company-logo_200_200/company-logo_200_200/0/1704469817612/sublettr_homes_logo?e=1769040000&v=beta&t=woSlVz2W9lhCA91BlxLJ5qAPEEsrheVzsBjfEgKMlcg",
+      "url": "https://subletr.com/",
+      "date": "May 2025 - Aug 2025",
+      "current": false,
+      "description": [
+				"Streamlining the subletting process for students by building a platform that prioritizes convenience, safety, and privacy."
+      ],
+      "skills": ["NextJS", "MongoDB", "Radix UI", "Shadcn UI"],
+      "color": "from-slate-500 to-slate-600"
+    }
+  ]
+}

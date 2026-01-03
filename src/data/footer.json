@@ -1,0 +1,21 @@
+{
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Alan0893"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/alanl193/"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:alanl07905@gmail.com"
+    }
+  ],
+  "footer": {
+    "credit": "Designed & Built by Alan Lin",
+    "builtWith": ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
+    "copyright": "© {year} Alan Lin"
+  }
+}

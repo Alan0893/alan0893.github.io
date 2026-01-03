@@ -1,0 +1,28 @@
+{
+  "bio": [
+    "I'm currently a senior at Boston University pursuing a Bachelor's degree in Computer Science. I'm passionate about building software that makes a difference and constantly exploring new technologies.",
+    "My interests span across software engineering, machine learning, and cloud computing. During my free time, I spend time learning new technologies and frequently working on new projects or iterating on previous ones."
+  ],
+  "skillCategories": [
+    {
+      "title": "Programming Languages",
+      "items": ["JavaScript", "TypeScript", "Python", "Java", "SQL", "Kotlin", "Bash/Shell"]
+    },
+    {
+      "title": "Frontend Technologies",
+      "items": ["React.js", "Next.js", "Three.js", "Material-UI", "Tailwind CSS"]
+    },
+    {
+      "title": "Backend Technologies",
+      "items": ["FastAPI", "Flask", "GraphQL"]
+    },
+    {
+      "title": "Databases & Cloud",
+      "items": ["MySQL", "MongoDB", "PostgreSQL", "Prisma ORM", "Firebase", "AWS", "Azure"]
+    },
+    {
+      "title": "Developer Tools",
+      "items": ["Git/GitHub", "Docker", "Postman", "VSCode", "Jupyter Notebook", "Jest", "CI/CD"]
+    }
+  ]
+}

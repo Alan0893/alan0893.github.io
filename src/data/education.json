@@ -1,0 +1,26 @@
+{
+  "education": [
+    {
+      "school": "Boston University",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Boston_University_seal.svg",
+      "degree": "Bachelor of Arts in Computer Science",
+      "date": "Sept 2022 - Present",
+      "current": true,
+      "courses": [
+				"Cloud Computing",
+				"Bioinformatics",
+        "Machine Learning",
+        "Mobile App Development",
+        "Data Science Tools & Applications",
+        "Distributed Systems",
+        "Database Systems",
+        "Software Engineering",
+        "Web Application Development",
+        "Analysis of Algorithms",
+        "Functional Programming",
+        "Computer Systems",
+        "Data Structures & OOP"
+      ]
+    }
+  ]
+}

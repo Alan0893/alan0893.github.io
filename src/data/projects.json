@@ -1,0 +1,256 @@
+{
+  "projects": [
+    {
+      "title": "Symbiota (Herbaria)",
+      "description": "Developing on-line tools to aid the generation, exploration and management of biodiversity data (collection specimens, observations, images, checklists, keys, etc.).",
+      "tags": ["Containerization", "PHP", "MySQL"],
+      "github": "https://github.com/BU-Spark/se-symbiota",
+      "demo": "https://symbiota.org/",
+      "year": "May. 2025 - Present",
+      "categories": ["web", "ml"],
+      "pinned": true,
+      "associate": "BU Spark!"
+    },
+    {
+      "title": "Boston Police Index",
+      "description": "A comprehensive data portal for researchers, journalists, and community members to analyze police activities, compensation, and accountability measures.",
+      "tags": ["ReactJS", "GraphQL", "PostgreSQL"],
+      "github": "",
+      "demo": "https://dev-bpi.netlify.app/",
+      "year": "May 2025 - Present",
+      "categories": ["web", "data"],
+      "pinned": true,
+      "associate": "BU Spark!"
+    },
+    {
+      "title": "Open Source System for 3D Printing Robot",
+      "description": "Users can design mechanical structures, submit them for automated 3D printing and testing by the BEAR robot, track the status of their experiments, view results, and compare performance on a public leaderboard.",
+      "tags": ["NextJS", "ThreeJS", "FastAPI"],
+      "github": "https://github.com/BU-Spark/se-bu-eng-3d-printing-robot",
+      "demo": "https://amc-frontend-dev.up.railway.app/",
+      "year": "Sep. 2025 - Present",
+      "categories": ["web"],
+      "pinned": true,
+      "associate": "BU Spark!"
+    },
+    {
+      "title": "Robinhood Portfolio",
+      "description": "A Flask web application for tracking and analyzing your Robinhood portfolio with real-time data, sector allocation charts, and investment simulation tools.",
+      "tags": ["Flask", "JavaScript", "ChartJS"],
+      "github": "https://github.com/Alan0893/robinhood-portfolio",
+      "demo": "https://robinport.onrender.com/",
+      "year": "Dec. 2025 - Jan. 2026",
+      "categories": ["web", "data"],
+      "pinned": true,
+      "associate": "Personal"
+    },
+    {
+      "title": "EcoID",
+      "description": "Mobile app that lets users snap wildlife photos, uses Gemini to identify species traits, and logs sightings to a map with journal entries.",
+      "tags": ["Kotlin", "Jetpack Compose", "Gemini"],
+      "github": "https://github.com/Alan0893/EcoID",
+      "demo": null,
+      "year": "Jan. 2025 - May 2025",
+      "categories": ["mobile"],
+      "pinned": false,
+      "associate": "Class - CS 501"
+    },
+    {
+      "title": "Multi-threaded Image Processing Server",
+      "description": "A C/POSIX multi-threaded server using worker pools and semaphores to queue and process image operations concurrently.",
+      "tags": ["C", "POSIX", "Sockets", "Threads"],
+      "github": "https://github.com/Alan0893/Image-Queueing-System",
+      "demo": null,
+      "year": "Sep. 2024 - Dec. 2024",
+      "categories": ["systems"],
+      "pinned": false,
+      "associate": "Class - CS 350"
+    },
+    {
+      "title": "Neural Networks Visualizer",
+      "description": "A custom MLP trainer that animates decision boundaries and gradient flows during training on separable data.",
+      "tags": ["Python", "Flask"],
+      "github": "https://github.com/Alan0893/Neural-Networks-Visualization",
+      "demo": null,
+      "year": "Nov. 2024",
+      "categories": ["ml", "data"],
+      "pinned": false,
+      "associate": "Class - CS 506"
+    },
+    {
+      "title": "Logistic Regression Visualizer",
+      "description": "A Python/Flask visualizer that shows how cluster separation affects logistic regression decision boundaries and metrics.",
+      "tags": ["Python", "Flask"],
+      "github": "https://github.com/Alan0893/Logistic-Regression",
+      "demo": null,
+      "year": "Nov. 2024",
+      "categories": ["data"],
+      "pinned": false,
+      "associate": "Class - CS 506"
+    },
+    {
+      "title": "LR & Hypothesis Testing Simulator",
+      "description": "Flask tool to run thousands of regression simulations and visualize confidence intervals and hypothesis tests.",
+      "tags": ["Python", "Flask"],
+      "github": "https://github.com/Alan0893/Confidence-Intervals",
+      "demo": null,
+      "year": "Nov. 2024",
+      "categories": ["data"],
+      "pinned": false,
+      "associate": "Class - CS 506"
+    },
+    {
+      "title": "Linear Regression Visualizer",
+      "description": "A Flask app that simulates and plots linear regression on large synthetic datasets in real time.",
+      "tags": ["Python", "Flask"],
+      "github": "https://github.com/Alan0893/Linear-Regression-Visualization",
+      "demo": null,
+      "year": "Nov. 2024",
+      "categories": ["data"],
+      "pinned": false,
+      "associate": "Class - CS 506"
+    },
+    {
+      "title": "Latent Semantic Analysis Search Engine",
+      "description": "An LSA-based search tool that ranks 18k+ documents with SVD and cosine similarity.",
+      "github": "https://github.com/Alan0893/LSA-Search-Engine",
+      "tags": ["Python", "Flask", "NLTK"],
+      "demo": null,
+      "year": "Oct. 2024",
+      "categories": ["data"],
+      "pinned": false,
+      "associate": "Class - CS 506"
+    },
+    {
+      "title": "KMeans Clustering Visualizer",
+      "description": "An interactive KMeans demo (with multiple initializations) that visualizes centroid updates and convergence.",
+      "tags": ["Python", "Matplotlib", "NumPy", "Scikit-learn"],
+      "github": "https://github.com/Alan0893/KMeans-Visualization",
+      "demo": null,
+      "year": "Sep. 2024",
+      "categories": ["data"],
+      "pinned": false,
+      "associate": "Class - CS 506"
+    },
+    {
+      "title": "Recipe Recommender System",
+      "description": "A recipe finder that uses Spoonacular plus Firebase to fetch ingredient-based meals, save history, and generate shopping lists with Sam's Club API.",
+      "tags": ["ReactJS", "Firebase", "OAuth"],
+      "github": "https://github.com/Alan0893/Recipe",
+      "demo": null,
+      "year": "Jan. 2024 - May 2024",
+      "categories": ["web"],
+      "pinned": false,
+      "associate": "Class - CS 411"
+    },
+    {
+      "title": "Sprofile",
+      "description": "A Spotify/Ticketmaster mashup that uses Spotify auth to pull user/library data and surfaces matching artist events in real time.",
+      "tags": ["Kotlin", "Jetpack Compose", "Gemini", "Maps"],
+      "github": "https://github.com/Alan0893/spotify-profile",
+      "demo": "https://sprofile-frontend.onrender.com/",
+      "year": "Apr. 2024 - May 2024",
+      "categories": ["web"],
+      "pinned": true,
+      "associate": "personal"
+    },
+    {
+      "title": "OCaml Interpreter",
+      "description": "An interpreter implementing core evaluation rules, stack commands, and traces for a mini OCaml-like language.",
+      "tags": ["OCaml", "Parsing", "Interpreters"],
+      "github": "https://github.com/Alan0893/CS320-2023-Fall/blob/main/assigns/interp3/MySolution/interp3.ml",
+      "demo": null,	
+      "year": "Oct. 2023 - Dec. 2023",
+      "categories": ["systems"],
+      "pinned": false,
+      "associate": "Class - CS 320"
+    },
+    {
+      "title": "StreamSift",
+      "description": "A TMDB-powered movie/TV browser that surfaces trending titles and rich details with fast search.",
+      "tags": ["ReactJS", "REST APIs", "Material UI"],
+      "github": "https://github.com/Alan0893/StreamSift",
+      "demo": "https://streamsift.netlify.app/",
+      "year": "Jun. 2023",
+      "categories": ["web"],
+      "pinned": false,
+      "associate": "personal"
+    },
+    {
+      "title": "NoteCove",
+      "description": "A Firebase-backed notes app with auth, storage, and real-time data access for user notes and profiles.",
+      "tags": ["ReactJS", "Firebase", "Authentication"],
+      "github": "https://github.com/Alan0893/NoteCove",
+      "demo": "https://notecove.netlify.app/",
+      "year": "May 2023 - Jun. 2023",
+      "categories": ["web"],
+      "pinned": false,
+      "associate": "personal"
+    },
+    {
+      "title": "Portfolio v1",
+      "description": "A first personal portfolio site built with HTML/CSS/JS/jQuery to showcase education, experience, and projects.",
+      "tags": ["HTML", "CSS", "JavaScript", "jQuery"],
+      "github": "https://github.com/Alan0893/Portfolio-v1",
+      "demo": "https://alanv1.netlify.app/",
+      "year": "Feb. 2023 - May 2023",
+      "categories": ["web"],
+      "pinned": false,
+      "associate": "personal"
+    },
+    {
+      "title": "Countrx",
+      "description": "A country explorer that pulls REST Countries data and Google Maps embeds to show stats and maps for 195 nations.",
+      "tags": ["HTML", "CSS", "REST APIs"],
+      "github": "https://github.com/Alan0893/Countrx",
+      "demo": "https://countrx.netlify.app/",
+      "year": "Jan. 2023 - Feb. 2023",
+      "categories": ["web"],
+      "pinned": false,
+      "associate": "personal"
+    },
+    {
+      "title": "Dow Jones Stock Predictor",
+      "description": "A Streamlit app that forecasts Dow Jones stocks using 5 years of historical data, regression models, and interactive visualizations.",
+      "tags": ["Python", "Streamlit", "Data Science"],
+      "github": "https://github.com/jasonw4/STOCK_PREDICTION",
+      "demo": null,
+      "year": "Nov. 2022",
+      "categories": ["web", "data"],
+      "pinned": false,
+      "associate": "personal"
+    },
+    {
+      "title": "Conversion Calculator",
+      "description": "A web calculator that handles arithmetic plus quick unit conversions across area, length, and temperature.",
+      "tags": ["HTML", "CSS", "JavaScript"],
+      "github": "https://github.com/Alan0893/Calculator",
+      "demo": "https://alcalculator.netlify.app/",
+      "year": "Jun. 2022- Aug. 2022",
+      "categories": ["web"],
+      "pinned": false,
+      "associate": "personal"
+    },
+    {
+      "title": "Brawldata.js",
+      "description": "A Node.js wrapper around the BrawlApi that simplifies and speeds up retrieval of game data for developers.",
+      "tags": ["JavaScript", "NodeJS", "NPM"],
+      "github": "https://github.com/Alan0893/brawldata.js",
+      "demo": "https://www.npmjs.com/package/brawldata.js",
+      "year": "Sep. 2021",
+      "categories": ["libraries"],
+      "pinned": true,
+      "associate": "personal"
+    }
+  ],
+  "categories": [
+    { "id": "pinned", "label": "Pinned" },
+    { "id": "all", "label": "All" },
+    { "id": "web", "label": "Web Dev" },
+    { "id": "ml", "label": "Machine Learning" },
+    { "id": "data", "label": "Data Science" },
+    { "id": "systems", "label": "Systems" },
+    { "id": "mobile", "label": "Mobile App Dev" },
+    { "id": "libraries", "label": "Libraries & Tools" }
+  ]
+}
