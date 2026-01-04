@@ -133,6 +133,17 @@
       "associate": "Class - CS 506"
     },
     {
+      "title": "Portfolio v2.0 - v2.1",
+      "description": "A second iteration on my portfolio site built with React to showcase my skills, experience, and projects.",
+      "tags": ["ReactJS", "JavaScript", "CSS"],
+      "github": "https://github.com/Alan0893/v2.1",
+      "demo": "https://alan0893.github.io/v2.1/",
+      "year": "Sep. 2024 - Feb. 2025",
+      "categories": ["web"],
+      "pinned": false,
+      "associate": "Personal"
+    },
+    {
       "title": "Recipe Recommender System",
       "description": "A recipe finder that uses Spoonacular plus Firebase to fetch ingredient-based meals, save history, and generate shopping lists with Sam's Club API.",
       "tags": ["ReactJS", "Firebase", "OAuth"],
@@ -191,8 +202,8 @@
       "title": "Portfolio v1",
       "description": "A first personal portfolio site built with HTML/CSS/JS/jQuery to showcase education, experience, and projects.",
       "tags": ["HTML", "CSS", "JavaScript", "jQuery"],
-      "github": "https://github.com/Alan0893/Portfolio-v1",
-      "demo": "https://alanv1.netlify.app/",
+      "github": "https://github.com/Alan0893/v1",
+      "demo": "https://alan0893.github.io/v1",
       "year": "Feb. 2023 - May 2023",
       "categories": ["web"],
       "pinned": false,
