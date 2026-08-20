@@ -1,95 +1,76 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import BouncingBalls from '../animations/BouncingBalls'
+import CourseAtlas from '../animations/CourseAtlas'
+import SectionHeader from './SectionHeader'
 import educationData from '../data/education.json'
 
 const Education = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-  }
-
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
   const education = educationData.education
 
   return (
-    <section id="education" className="py-32 px-6">
+    <section id="education" className="scroll-mt-24 px-6 py-24 lg:px-16">
       <motion.div
         ref={ref}
-        className="max-w-6xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
+        className="max-w-3xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
       >
-        {/* Section Header */}
-        <motion.div variants={itemVariants} className="flex items-center gap-4 mb-16">
-          <span className="text-accent font-mono">02.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-100">Education</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent" />
-        </motion.div>
+        <SectionHeader number="02" title="Education" kicker="Study" />
 
-        {/* Single card */}
-        <div className="grid gap-8">
+        <div className="space-y-10">
           {education.map((edu) => (
-            <motion.div key={edu.school} variants={itemVariants} className="glass rounded-3xl p-6 md:p-8 border border-white/10">
-              <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl glass p-3 flex items-center justify-center shadow-lg shadow-accent/15">
-                    <img src={edu.logo} alt={edu.school} className="w-10 h-10 object-contain" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-semibold text-slate-50 flex items-center gap-2">
-                      {edu.school}
-                      {edu.current && (
-                        <span className="px-2 py-0.5 text-xs font-mono rounded-full bg-accent/20 text-accent">
-                          Current
-                        </span>
-                      )}
-                    </h3>
-                    <p className="text-slate-300">{edu.degree}</p>
-                    <p className="text-sm font-mono text-slate-500 mt-1">{edu.date}</p>
-                  </div>
-                </div>
-
-                {edu.courses && (
-                  <div className="flex-1">
-                    <div className="text-xs uppercase tracking-[0.2em] text-slate-500 font-semibold mb-3">
-                      Relevant Coursework
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {edu.courses.map((course) => (
-                        <span
-                          key={course}
-                          className="px-3 py-1 text-xs rounded-full bg-white/8 text-slate-100 border border-white/5"
-                        >
-                          {course}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+            <article key={edu.school} className="border border-line">
+              <div className="flex items-start gap-5 border-b border-line p-6">
+                {edu.logo && (
+                  <img src={edu.logo} alt="" className="h-12 w-12 object-contain" />
                 )}
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <h3 className="font-display text-3xl">{edu.school}</h3>
+                    {edu.current && (
+                      <span className="font-mono text-[11px] uppercase tracking-index text-accent">
+                        Current
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-1 text-muted">{edu.degree}</p>
+                  <p className="mt-2 font-mono text-xs text-muted">{edu.date}</p>
+                </div>
               </div>
-            </motion.div>
+
+              {edu.courses && (
+                <div className="p-6">
+                  <p className="mb-4 font-mono text-[11px] uppercase tracking-index text-muted">
+                    Relevant coursework
+                  </p>
+                  <ol className="columns-1 gap-x-10 sm:columns-2">
+                    {edu.courses.map((course, i) => (
+                      <li
+                        key={course}
+                        className="mb-2 break-inside-avoid font-mono text-sm text-ink"
+                      >
+                        <span className="mr-2 text-muted">{String(i + 1).padStart(2, '0')}</span>
+                        {course}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+            </article>
           ))}
         </div>
 
-        {/* Bouncing Balls Animation */}
-        <div className="relative h-40 mt-12 overflow-hidden">
-          <BouncingBalls />
-        </div>
+        <figure className="mt-12 border border-line bg-paper">
+          <div className="h-[320px] sm:h-[380px]">
+            <CourseAtlas courses={education[0]?.courses ?? []} />
+          </div>
+        </figure>
+        <p className="mt-2 font-mono text-[11px] uppercase tracking-index text-muted">
+          Fig. 03 — Curriculum
+        </p>
       </motion.div>
     </section>
   )

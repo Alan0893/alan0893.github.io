@@ -1,85 +1,54 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import WordSphere from '../animations/WordSphere'
+import TypeCase from '../animations/TypeCase'
+import SectionHeader from './SectionHeader'
 import aboutData from '../data/about.json'
 
 const About = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
-
-  const skillCategories = aboutData.skillCategories
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   return (
-    <section id="about" className="py-32 px-6">
+    <section id="about" className="scroll-mt-24 px-6 py-24 lg:px-16">
       <motion.div
         ref={ref}
-        className="max-w-6xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
+        className="max-w-3xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
       >
-        {/* Section Header */}
-        <motion.div variants={itemVariants} className="flex items-center gap-4 mb-16">
-          <span className="text-accent font-mono">01.</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-100">About Me</h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent" />
-        </motion.div>
+        <SectionHeader number="01" title="About" kicker="Index" />
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left column - Bio */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <p className="text-slate-300 text-lg leading-relaxed">
-              {aboutData.bio[0]}
-            </p>
-            <p className="text-slate-400 leading-relaxed">
-              {aboutData.bio[1]}
-            </p>
+        <div className="space-y-5 text-lg leading-relaxed text-ink/90">
+          <p>{aboutData.bio[0]}</p>
+          <p className="text-muted">{aboutData.bio[1]}</p>
+        </div>
 
-            {/* Spinning WordSphere */}
-            <div className="pt-6">
-              <div className="flex justify-center">
-                <WordSphere texts={skillCategories.flatMap((category) => category.items)} />
+        <div className="mt-12">
+          <TypeCase texts={aboutData.skillCategories.flatMap((category) => category.items)} />
+        </div>
+        <p className="mt-2 font-mono text-[11px] uppercase tracking-index text-muted">
+          Fig. 02 — Type case
+        </p>
+
+        <div className="mt-16 space-y-10">
+          {aboutData.skillCategories.map((category, index) => (
+            <div key={category.title} className="border-t border-line pt-5">
+              <div className="mb-4 flex items-baseline justify-between">
+                <h3 className="font-display text-2xl italic">{category.title}</h3>
+                <span className="font-mono text-[11px] text-muted">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
               </div>
+              <ul className="flex flex-wrap gap-x-4 gap-y-2">
+                {category.items.map((item) => (
+                  <li key={item} className="font-mono text-sm text-ink">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </motion.div>
-
-          {/* Right column - Skills */}
-          <motion.div variants={itemVariants} className="space-y-8">
-            {skillCategories.map((category) => (
-              <div key={category.title}>
-                <h3 className="text-sm font-mono text-slate-400 mb-3 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#7c8aee' }} />
-                  {category.title}
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {category.items.map((item) => (
-                    <span
-                      key={item}
-                      className="px-4 py-2 glass rounded-full text-sm text-slate-200 card-hover"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </motion.div>
+          ))}
         </div>
       </motion.div>
     </section>

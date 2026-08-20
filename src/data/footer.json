@@ -15,7 +15,7 @@
   ],
   "footer": {
     "credit": "Designed & Built by Alan Lin",
-    "builtWith": ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
+    "builtWith": ["React", "Framer Motion", "Tailwind CSS"],
     "copyright": "© {year} Alan Lin"
   }
 }
