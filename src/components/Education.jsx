@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import CourseAtlas from '../animations/CourseAtlas'
+import CourseIndex from '../animations/CourseIndex'
 import SectionHeader from './SectionHeader'
 import educationData from '../data/education.json'
 
@@ -20,10 +20,10 @@ const Education = () => {
       >
         <SectionHeader number="02" title="Education" kicker="Study" />
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           {education.map((edu) => (
-            <article key={edu.school} className="border border-line">
-              <div className="flex items-start gap-5 border-b border-line p-6">
+            <article key={edu.school}>
+              <div className="flex items-start gap-5 border border-line p-6">
                 {edu.logo && (
                   <img src={edu.logo} alt="" className="h-12 w-12 object-contain" />
                 )}
@@ -42,35 +42,19 @@ const Education = () => {
               </div>
 
               {edu.courses && (
-                <div className="p-6">
-                  <p className="mb-4 font-mono text-[11px] uppercase tracking-index text-muted">
-                    Relevant coursework
-                  </p>
-                  <ol className="columns-1 gap-x-10 sm:columns-2">
-                    {edu.courses.map((course, i) => (
-                      <li
-                        key={course}
-                        className="mb-2 break-inside-avoid font-mono text-sm text-ink"
-                      >
-                        <span className="mr-2 text-muted">{String(i + 1).padStart(2, '0')}</span>
-                        {course}
-                      </li>
-                    ))}
-                  </ol>
-                </div>
+                <figure className="border border-t-0 border-line bg-paper">
+                  <div className="h-[400px] overflow-hidden border-b border-line sm:h-[460px]">
+                    <CourseIndex courses={edu.courses} />
+                  </div>
+                  <figcaption className="flex items-center justify-between px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted">
+                    <span>Fig. 02 — Curriculum</span>
+                    <span>Double-click to pin</span>
+                  </figcaption>
+                </figure>
               )}
             </article>
           ))}
         </div>
-
-        <figure className="mt-12 border border-line bg-paper">
-          <div className="h-[320px] sm:h-[380px]">
-            <CourseAtlas courses={education[0]?.courses ?? []} />
-          </div>
-        </figure>
-        <p className="mt-2 font-mono text-[11px] uppercase tracking-index text-muted">
-          Fig. 02 — Curriculum
-        </p>
       </motion.div>
     </section>
   )

@@ -7,19 +7,132 @@
       "date": "Sept 2022 - May 2026",
       "current": false,
       "courses": [
-				"Cloud Computing",
-				"Bioinformatics",
-        "Machine Learning",
-        "Mobile App Development",
-        "Data Science Tools & Applications",
-        "Distributed Systems",
-        "Database Systems",
-        "Software Engineering",
-        "Web Application Development",
-        "Analysis of Algorithms",
-        "Functional Programming",
-        "Computer Systems",
-        "Data Structures & OOP"
+        {
+          "name": "Hardware Design",
+          "code": "CS 599",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-599/",
+          "description": "Lab- and project-based course on designing hardware accelerators with software, using Verilog and high-level synthesis. Topics include pipelining, customized memory, AI/ML acceleration, and FPGA implementation."
+        },
+        {
+          "name": "HCI & HAI",
+          "code": "CS 598",
+          "url": "https://www.bu.edu/cs/undergraduate/courses/topics/topics-courses-archive/",
+          "description": "Combines classic HCI—usability, design heuristics, and user studies—with human-centered AI: prompt engineering, AI interface design, agentic workflows, and evaluating AI-powered systems."
+        },
+        {
+          "name": "Cloud Computing",
+          "code": "CS 528",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-528/",
+          "description": "Fundamentals of cloud computing covering IaaS platforms, OpenStack, Big Data platforms, and data-center-scale systems. Includes influential papers and a mentored group project."
+        },
+        {
+          "name": "Computational Biology",
+          "code": "DS 430",
+          "url": "https://www.bu.edu/academics/cds/courses/cds-ds-630/",
+          "description": "Fundamental algorithms of modern bioinformatics and their applications to data, including genome assembly, sequence alignment, phylogenetic trees, gene regulation, and large-scale genomics."
+        },
+        {
+          "name": "Machine Learning Practicum",
+          "code": "CS 549",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-549/",
+          "description": "Spark! practicum applying algorithms, inferential analytics, and software development to real-world partner projects, with a machine-learning or analytics deliverable and final presentation."
+        },
+        {
+          "name": "Applied Machine Learning",
+          "code": "CS 541",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-541/",
+          "description": "Practical machine learning: clustering, classification, regression, feature selection, and model compression, with hands-on programming on real-world datasets."
+        },
+        {
+          "name": "Mobile App Development",
+          "code": "CS 501",
+          "url": "https://www.bu.edu/cs/undergraduate/courses/topics/topics-courses-archive/",
+          "description": "Hands-on Android development with Kotlin, Jetpack Compose, and the Android SDK. Students build small apps, then collaborate on a substantial team project using agile practices."
+        },
+        {
+          "name": "Software Engineering Practicum",
+          "code": "CS 519",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-519/",
+          "description": "Spark! practicum applying programming and system development skills to real-world projects from partner organizations, with emphasis on teamwork, communication, and software process."
+        },
+        {
+          "name": "Foundations of Data Science",
+          "code": "CS 365",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-365/",
+          "description": "Foundation for data-intensive courses such as data science, machine learning, and data mining, covering theoretical fundamentals and practical working knowledge."
+        },
+        {
+          "name": "Data Science Tools",
+          "code": "CS 506",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-506/",
+          "description": "Practical skills for working with data, including clustering, classification, regression, and network analysis, with hands-on application via programming."
+        },
+        {
+          "name": "Distributed Systems",
+          "code": "CS 350",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-350/",
+          "description": "Programming-centric introduction to computer systems: design principles, performance, concurrency, transactions, consistency, parallelism, replication, fault tolerance, and distributed consensus."
+        },
+        {
+          "name": "Database Systems",
+          "code": "CS 460",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-460/",
+          "description": "Introduction to database management systems: data models, SQL, indexing and hashing, query optimization, transactions, concurrency control, recovery, integrity, and security."
+        },
+        {
+          "name": "Algorithms",
+          "code": "CS 330",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-330/",
+          "description": "Algorithm design and analysis: asymptotics, graph algorithms, greedy methods, dynamic programming, network flows, polynomial-time reductions, and NP-complete problems."
+        },
+        {
+          "name": "Software Engineering",
+          "code": "CS 411",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-411/",
+          "description": "Construction of reliable software, including testing methodologies, structured design, software quality, complexity, fault tolerance, and related engineering practices."
+        },
+        {
+          "name": "Web App Development",
+          "code": "CS 391",
+          "url": "https://www.bu.edu/cs/undergraduate/courses/topics/",
+          "description": "Hands-on web application development with HTML/CSS, JavaScript, React, Next.js, and MongoDB, covering Git workflows, UI construction, and full-stack deployment."
+        },
+        {
+          "name": "Functional Programming",
+          "code": "CS 320",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-320/",
+          "description": "Concepts in programming-language design: bindings, argument transmission, control structures, compile-time, load-time, and run-time environments, and interpreters."
+        },
+        {
+          "name": "Probability",
+          "code": "CS 237",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-237/",
+          "description": "Probabilistic concepts and methods used in computer science, emphasizing the role of randomness in computing and rigorous reasoning, analysis, and algorithmic thinking."
+        },
+        {
+          "name": "Computer Systems",
+          "code": "CS 210",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-210/",
+          "description": "Fundamentals of computer systems and systems programming: digital logic, processors, memory, I/O, instruction-set architecture, assembly, operating systems, and C."
+        },
+        {
+          "name": "Linear Algebra",
+          "code": "CS 132",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-132/",
+          "description": "Data structures and algorithms for geometric objects, including Cartesian geometry, transformations, queries and sampling, and triangulations, with emphasis on rigorous analysis."
+        },
+        {
+          "name": "Discrete Mathematics",
+          "code": "CS 131",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-131/",
+          "description": "Fundamentals of logic, proofs, counting, set theory, relations and functions, and combinatoric structures."
+        },
+        {
+          "name": "Data Structures & OOP",
+          "code": "CS 112",
+          "url": "https://www.bu.edu/academics/cas/courses/cas-cs-112/",
+          "description": "Advanced programming techniques and data structures, including recursion, algorithm analysis, linked lists, stacks, queues, trees, graphs, searching, and sorting."
+        }
       ]
     }
   ]
