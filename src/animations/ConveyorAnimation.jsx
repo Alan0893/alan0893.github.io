@@ -63,7 +63,7 @@ const ConveyorAnimation = () => {
   return (
     <div className="relative w-full overflow-hidden border border-line">
       <p className="border-b border-line px-4 py-2 font-mono text-[11px] uppercase tracking-index text-muted">
-        Fig. 05 — Contact belt
+        Fig. 04 — Contact belt
       </p>
       <div className="relative flex h-28 items-center">
         <Gear size={48} className="absolute left-3 z-10" />

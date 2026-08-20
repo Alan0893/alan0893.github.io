@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import TypeCase from '../animations/TypeCase'
+import AxonometricStudy from '../animations/AxonometricStudy'
 import SectionHeader from './SectionHeader'
 import aboutData from '../data/about.json'
 
@@ -9,7 +9,7 @@ const About = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   return (
-    <section id="about" className="scroll-mt-24 px-6 py-24 lg:px-16">
+    <section id="about" className="relative z-0 scroll-mt-24 px-6 py-24 lg:px-16 lg:pt-12">
       <motion.div
         ref={ref}
         className="max-w-3xl"
@@ -24,12 +24,15 @@ const About = () => {
           <p className="text-muted">{aboutData.bio[1]}</p>
         </div>
 
-        <div className="mt-12">
-          <TypeCase texts={aboutData.skillCategories.flatMap((category) => category.items)} />
-        </div>
-        <p className="mt-2 font-mono text-[11px] uppercase tracking-index text-muted">
-          Fig. 02 — Type case
-        </p>
+        <figure className="mt-12 border border-line bg-paper">
+          <div className="relative h-[280px] overflow-hidden border-b border-line sm:h-[360px]">
+            <AxonometricStudy />
+          </div>
+          <figcaption className="flex items-center justify-between px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted">
+            <span>Fig. 01 — Axonometric study</span>
+            <span>Plot / Build</span>
+          </figcaption>
+        </figure>
 
         <div className="mt-16 space-y-10">
           {aboutData.skillCategories.map((category, index) => (

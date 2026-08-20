@@ -69,7 +69,7 @@ const Education = () => {
           </div>
         </figure>
         <p className="mt-2 font-mono text-[11px] uppercase tracking-index text-muted">
-          Fig. 03 — Curriculum
+          Fig. 02 — Curriculum
         </p>
       </motion.div>
     </section>

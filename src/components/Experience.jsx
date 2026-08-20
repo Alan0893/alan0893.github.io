@@ -87,7 +87,7 @@ const Experience = () => {
           <RunningStickman />
         </div>
         <p className="mt-2 font-mono text-[11px] uppercase tracking-index text-muted">
-          Fig. 04 — On a loop
+          Fig. 03 — On a loop
         </p>
       </motion.div>
     </section>
