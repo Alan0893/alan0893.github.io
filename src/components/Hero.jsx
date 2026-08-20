@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="hero" className="scroll-mt-24 px-6 pt-24 pb-8 lg:hidden">
       <p className="font-mono text-[11px] uppercase tracking-index text-muted">Portfolio / 04</p>
       <h1 className="mt-3 font-display text-6xl leading-none text-ink">Alan Lin</h1>
-      <p className="mt-4 text-sm text-muted">Computer Science · Boston University</p>
+      <p className="mt-4 text-sm text-muted">B.A. Computer Science · Boston University</p>
       <p className="mt-6 font-display text-2xl italic leading-snug text-ink">
         Constructing ideas into reality, one line at a time.
       </p>

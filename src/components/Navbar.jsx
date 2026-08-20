@@ -71,7 +71,7 @@ const Navbar = () => {
             <h1 className="font-display text-6xl leading-none text-ink">Alan Lin</h1>
           </button>
           <p className="mt-4 text-sm text-muted">
-            Computer Science · Boston University
+            B.A. Computer Science · Boston University
           </p>
           <p className="mt-6 max-w-xs font-display text-2xl italic leading-snug text-ink">
             Constructing ideas into reality, one line at a time.

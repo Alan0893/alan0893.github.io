@@ -1,28 +1,24 @@
 {
   "bio": [
-    "I'm currently a senior at Boston University pursuing a Bachelor's degree in Computer Science. I'm passionate about building software that makes a difference and constantly exploring new technologies.",
-    "My interests span across software engineering, machine learning, and cloud computing. During my free time, I spend time learning new technologies and frequently working on new projects or iterating on previous ones."
+    "I'm a recent Computer Science graduate from Boston University. I'm passionate about software engineering, cloud computing, and machine learning, with hands-on project experience spanning full-stack web development, AI pipelines, and biotech applications.",
+    "Outside of work, I love deep-diving into new technologies, building personal projects, and continuously iterating on software solutions."
   ],
   "skillCategories": [
     {
-      "title": "Programming Languages",
-      "items": ["JavaScript", "TypeScript", "Python", "Java", "SQL", "Kotlin", "Bash/Shell"]
+      "title": "Languages",
+      "items": ["JavaScript", "TypeScript", "Python", "Java", "SQL", "Kotlin", "C/C++", "Bash/Shell", "HTML/CSS"]
     },
     {
-      "title": "Frontend Technologies",
-      "items": ["React.js", "Next.js", "Three.js", "Material-UI", "Tailwind CSS"]
+      "title": "Frameworks & Libraries",
+      "items": ["React.js", "Next.js", "Node.js", "Three.js", "FastAPI", "Flask", "GraphQL", "Material-UI", "Tailwind CSS", "Scikit-Learn", "Pandas"]
     },
     {
-      "title": "Backend Technologies",
-      "items": ["FastAPI", "Flask", "GraphQL"]
+      "title": "Cloud & DevOps",
+      "items": ["Docker", "Kubernetes", "OpenShift", "AWS", "Azure", "Linux", "CI/CD (GitHub Actions)"]
     },
     {
-      "title": "Databases & Cloud",
-      "items": ["MySQL", "MongoDB", "PostgreSQL", "Prisma ORM", "Firebase", "AWS", "Azure"]
-    },
-    {
-      "title": "Developer Tools",
-      "items": ["Git/GitHub", "Docker", "Postman", "VSCode", "Jupyter Notebook", "Jest", "CI/CD"]
+      "title": "Databases & Tools",
+      "items": ["PostgreSQL", "MySQL", "MongoDB", "Prisma ORM", "Firebase", "Git/GitHub", "Postman", "VSCode", "Jupyter Notebook", "Jest"]
     }
   ]
 }

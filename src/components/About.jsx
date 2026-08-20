@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import AxonometricStudy from '../animations/AxonometricStudy'
+import ClusterPlate from '../animations/ClusterPlate'
 import SectionHeader from './SectionHeader'
 import aboutData from '../data/about.json'
 
@@ -25,12 +25,12 @@ const About = () => {
         </div>
 
         <figure className="mt-12 border border-line bg-paper">
-          <div className="relative h-[280px] overflow-hidden border-b border-line sm:h-[360px]">
-            <AxonometricStudy />
+          <div className="relative h-[280px] overflow-hidden border-b border-line sm:h-[340px]">
+            <ClusterPlate />
           </div>
-          <figcaption className="flex items-center justify-between px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted">
-            <span>Fig. 01 — Axonometric study</span>
-            <span>Plot / Build</span>
+          <figcaption className="flex items-center justify-between gap-4 px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted">
+            <span>Fig. 01 — Clusters</span>
+            <span>Click or drag · Double-click to reset</span>
           </figcaption>
         </figure>
 
