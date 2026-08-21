@@ -107,6 +107,23 @@ a.text-ink:visited {
 }
 
 a.hover\:text-accent:hover,
-a.hover\:text-accent:visited:hover {
+a.hover\:text-accent:visited:hover,
+a.text-muted:hover,
+a.text-muted:visited:hover,
+a.text-ink:hover,
+a.text-ink:visited:hover,
+a.index-link:hover,
+a.index-link:visited:hover,
+a.index-link:focus-visible,
+.contact-tile:hover,
+.contact-tile:visited:hover,
+.contact-tile:focus-visible {
   color: var(--color-accent);
+}
+
+.contact-tile:hover .contact-tile-mark,
+.contact-tile:visited:hover .contact-tile-mark,
+.contact-tile:focus-visible .contact-tile-mark {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
