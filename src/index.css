@@ -20,8 +20,12 @@ body {
   min-height: 100vh;
 }
 
+:root {
+  --color-accent: #1e40af;
+}
+
 ::selection {
-  background: #c2410c;
+  background: var(--color-accent);
   color: #f4efe6;
 }
 
@@ -74,11 +78,35 @@ body {
   bottom: -2px;
   width: 0;
   height: 1px;
-  background: #c2410c;
+  background: var(--color-accent);
   transition: width 0.3s ease;
 }
 
 .index-link:hover::after,
 .index-link.is-active::after {
   width: 100%;
+}
+
+.text-accent,
+.text-accent:link,
+.text-accent:visited,
+.text-accent:hover,
+.text-accent:active,
+a.text-accent:any-link {
+  color: var(--color-accent);
+}
+
+a.text-muted:link,
+a.text-muted:visited {
+  color: #6f675e;
+}
+
+a.text-ink:link,
+a.text-ink:visited {
+  color: #1a1614;
+}
+
+a.hover\:text-accent:hover,
+a.hover\:text-accent:visited:hover {
+  color: var(--color-accent);
 }
