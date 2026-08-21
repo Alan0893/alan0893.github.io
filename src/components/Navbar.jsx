@@ -61,7 +61,7 @@ const Navbar = () => {
       <aside className="hidden lg:flex fixed inset-y-0 left-0 z-40 w-[28rem] flex-col justify-between overflow-y-auto border-r border-line bg-paper/80 px-10 py-12 backdrop-blur-[2px]">
         <div>
           <p className="font-mono text-[11px] uppercase tracking-index text-muted">
-            Portfolio / 04
+            Portfolio
           </p>
           <button
             type="button"
@@ -117,7 +117,7 @@ const Navbar = () => {
             ))}
           </ul>
           <p className="mt-8 font-mono text-[10px] uppercase tracking-index text-line">
-            v4 · Studio Index
+            v4
           </p>
         </div>
       </aside>
