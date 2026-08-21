@@ -47,7 +47,7 @@ const Education = () => {
                     <CourseIndex courses={edu.courses} />
                   </div>
                   <figcaption className="flex items-center justify-between px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted">
-                    <span>Fig. 02 — Curriculum</span>
+                    <span>Fig. 02 — Coursework</span>
                     <span>Double-click to pin</span>
                   </figcaption>
                 </figure>
