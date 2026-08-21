@@ -13,6 +13,14 @@
         "Built and evaluated telecom time-series models for ORAN anomaly detection and root cause analysis, training Mantis and TimesNet encoders in PyTorch and tuning class weights and focal loss with experiments tracked in MLflow."
       ],
       "skills": ["Deep Learning", "OpenShift AI", "PyTorch", "Helm Charts"],
+      "repos": [
+        { "name": "RAG", "url": "https://github.com/rh-ai-quickstart/RAG" },
+        { "name": "ai-architecture-charts", "url": "https://github.com/rh-ai-quickstart/ai-architecture-charts" },
+        { "name": "it-self-service-agent", "url": "https://github.com/rh-ai-quickstart/it-self-service-agent" },
+        { "name": "ai-driven-network-remediation", "url": "https://github.com/rh-ai-quickstart/ai-driven-network-remediation" },
+        { "name": "quickstart-factory", "url": "https://github.com/rh-ai-quickstart/quickstart-factory" },
+        { "name": "ai-taxi-anomaly-detector", "url": "https://github.com/Alan0893/ai-taxi-anomaly-detector" }
+      ],
       "color": "from-slate-500 to-slate-600"
     },
 		{
@@ -26,6 +34,15 @@
         "Updated core functionality for an open-source digital herbarium platform including rapid data entry workflows, batch processing capabilities for large-scale specimen digitization, AI-powered transcription with configurable machine learning models, and containerized deployment architecture to streamline researchers' specimen cataloging and data management processes."
       ],
       "skills": ["Containerization", "PHP", "MySQL"],
+      "repos": [
+        { "name": "se-symbiota", "url": "https://github.com/BU-Spark/se-symbiota" },
+        { "name": "spark-symbiota-ml", "url": "https://github.com/BU-Spark/spark-symbiota-ml" },
+        { "name": "herbaria-ocr-middleware", "url": "https://github.com/BU-Spark/herbaria-ocr-middleware" },
+        { "name": "se-Symbiota-portal-reference-only", "url": "https://github.com/BU-Spark/se-Symbiota-portal-reference-only" }
+      ],
+      "deployments": [
+        { "label": "Symbiota", "url": "https://symbiota.org/" }
+      ],
       "color": "from-slate-500 to-slate-600"
     },
 		{
@@ -39,6 +56,12 @@
         "Built a police accountability platform that aggregates Boston Police Department data into organized officer profiles and activity reports, providing transparent community access to local policing information."
       ],
       "skills": ["Next.js", "PostgreSQL", "GraphQL"],
+      "repos": [
+        { "name": "bp-index-public", "url": "https://github.com/bos-police-index/bp-index-public" }
+      ],
+      "deployments": [
+        { "label": "Police Index", "url": "https://dev-bpi.netlify.app/" }
+      ],
       "color": "from-slate-500 to-slate-600"
     },
 		{
@@ -52,6 +75,12 @@
         "Developed a secure web interface for researchers to remotely submit 3D printing and testing tasks to an autonomous robotics system that optimizes mechanical properties for applications like helmet pads and crumple zones."
       ],
       "skills": ["Next.js", "FastAPI", "MySQL"],
+      "repos": [
+        { "name": "se-bu-eng-3d-printing-robot", "url": "https://github.com/BU-Spark/se-bu-eng-3d-printing-robot" }
+      ],
+      "deployments": [
+        { "label": "3D printing lab", "url": "https://amc-frontend-dev.up.railway.app/" }
+      ],
       "color": "from-slate-500 to-slate-600"
     },
     {
@@ -78,6 +107,9 @@
         "Engineered a comprehensive digital mapping platform for the City of Boston that streamlines access to LGBTQ+ community resources, featuring interactive neighborhood-based search capabilities and real-time resource information updates."
 			],
       "skills": ["Next.js", "Firebase"],
+      "repos": [
+        { "name": "se-kimberly-rhoten-mola", "url": "https://github.com/BU-Spark/se-kimberly-rhoten-mola" }
+      ],
       "color": "from-slate-500 to-slate-600"
     },
 		{
@@ -91,6 +123,9 @@
 				"Streamlining the subletting process for students by building a platform that prioritizes convenience, safety, and privacy."
       ],
       "skills": ["Next.js", "MongoDB", "Radix UI", "Shadcn UI"],
+      "deployments": [
+        { "label": "Subletr", "url": "https://subletr.com/" }
+      ],
       "color": "from-slate-500 to-slate-600"
     }
   ]

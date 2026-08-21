@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import RunningStickman from '../animations/RunningStickman'
 import SectionHeader from './SectionHeader'
+import RepoLinks from './RepoLinks'
 import experienceData from '../data/experiences.json'
 
 const Experience = () => {
@@ -77,6 +78,8 @@ const Experience = () => {
                     {exp.skills.join('  ·  ')}
                   </p>
                 )}
+
+                <RepoLinks repos={exp.repos} deployments={exp.deployments} />
               </div>
             </article>
           ))}

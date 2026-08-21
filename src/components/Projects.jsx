@@ -3,21 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import ConveyorAnimation from '../animations/ConveyorAnimation'
 import SectionHeader from './SectionHeader'
+import RepoLinks from './RepoLinks'
 import projectsData from '../data/projects.json'
 
+const projectRepos = (project) =>
+  (project.repos || []).filter((repo) => repo?.url)
+
 const Projects = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.08 })
-  const [filter, setFilter] = useState('pinned')
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05, initialInView: true })
   const [openTitle, setOpenTitle] = useState(null)
-
   const projects = projectsData.projects
-  const categories = projectsData.categories
-
-  const filteredProjects = filter === 'pinned'
-    ? projects.filter((p) => p.pinned === true)
-    : filter === 'all'
-    ? projects
-    : projects.filter((p) => p.categories && p.categories.includes(filter))
 
   return (
     <section id="projects" className="scroll-mt-24 px-6 py-24 lg:px-16">
@@ -28,37 +23,23 @@ const Projects = () => {
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
       >
-        <SectionHeader number="04" title="Projects" kicker="Selected work" />
+        <SectionHeader number="04" title="Projects" kicker="Work" />
 
         <p className="mb-8 text-sm italic text-muted">
           Some GitHub repositories and project links may have been made private or are no longer publicly accessible.
         </p>
 
-        <div className="mb-10 flex flex-wrap gap-x-5 gap-y-2 border-b border-line pb-4">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setFilter(cat.id)}
-              className={`font-mono text-[11px] uppercase tracking-index transition-colors ${
-                filter === cat.id ? 'text-accent' : 'text-muted hover:text-ink'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
         <div>
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => {
+          <AnimatePresence>
+            {projects.map((project) => {
               const isOpen = openTitle === project.title
+              const repos = projectRepos(project)
+              const tags = project.tags || []
               return (
                 <motion.article
                   key={project.title}
-                  layout
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
                   className="border-t border-line"
                 >
                   <button
@@ -74,7 +55,7 @@ const Projects = () => {
                         <span className="font-mono text-xs text-muted">{isOpen ? '–' : '+'}</span>
                       </span>
                       <span className="mt-1 block font-mono text-[11px] text-muted">
-                        {[project.associate, project.tags.slice(0, 3).join(' · ')].filter(Boolean).join('  ·  ')}
+                        {tags.join(' · ')}
                       </span>
                     </span>
                     <span className="shrink-0 font-mono text-[11px] uppercase text-muted">
@@ -94,38 +75,15 @@ const Projects = () => {
                           <p className="max-w-xl text-sm leading-relaxed text-ink/85">
                             {project.description}
                           </p>
-                          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-                            {project.associate && (
-                              <span className="font-mono text-xs text-muted capitalize">
-                                {project.associate}
-                              </span>
-                            )}
-                            <span className="font-mono text-xs text-muted">
-                              {project.tags.join('  ·  ')}
-                            </span>
-                          </div>
-                          <div className="mt-4 flex gap-5">
-                            {project.github && (
-                              <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="index-link font-mono text-xs uppercase tracking-index text-accent"
-                              >
-                                Repository
-                              </a>
-                            )}
-                            {project.demo && (
-                              <a
-                                href={project.demo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="index-link font-mono text-xs uppercase tracking-index text-accent"
-                              >
-                                Live
-                              </a>
-                            )}
-                          </div>
+                          <RepoLinks
+                            repos={repos}
+                            packages={project.packages}
+                            deployments={
+                              project.demo
+                                ? [{ name: 'Live', url: project.demo, label: 'Live' }]
+                                : []
+                            }
+                          />
                         </div>
                       </motion.div>
                     )}
@@ -144,7 +102,7 @@ const Projects = () => {
             rel="noopener noreferrer"
             className="index-link font-mono text-xs uppercase tracking-index text-ink"
           >
-            View all on GitHub →
+            View profile on GitHub →
           </a>
         </div>
 
