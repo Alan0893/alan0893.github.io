@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var night = stored
+            ? stored === 'night'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (night) document.documentElement.classList.add('night')
+        } catch (e) {}
+      })()
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -11,8 +22,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-6IcTnqrE.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-8Li3ugqz.css">
+    <script type="module" crossorigin src="/assets/index-Bo24DS7p.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DMXIEJlV.css">
   </head>
   <body>
     <div id="root"></div>
