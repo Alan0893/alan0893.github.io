@@ -23,13 +23,13 @@ const Education = () => {
         <div className="space-y-8">
           {education.map((edu) => (
             <article key={edu.school}>
-              <div className="flex items-start gap-5 border border-line p-6">
+              <div className="flex items-start gap-4 border border-line p-4 sm:gap-5 sm:p-6">
                 {edu.logo && (
-                  <img src={edu.logo} alt="" className="h-12 w-12 object-contain" />
+                  <img src={edu.logo} alt="" className="h-10 w-10 object-contain sm:h-12 sm:w-12" />
                 )}
-                <div className="flex-1">
+                <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="font-display text-3xl">{edu.school}</h3>
+                    <h3 className="font-display text-2xl leading-tight sm:text-3xl">{edu.school}</h3>
                     {edu.current && (
                       <span className="font-mono text-[11px] uppercase tracking-index text-accent">
                         Current
@@ -43,12 +43,15 @@ const Education = () => {
 
               {edu.courses && (
                 <figure className="border border-t-0 border-line bg-paper">
-                  <div className="h-[400px] overflow-hidden border-b border-line sm:h-[460px]">
+                  <div className="border-b border-line sm:h-[460px] sm:overflow-hidden">
                     <CourseIndex courses={edu.courses} />
                   </div>
-                  <figcaption className="flex items-center justify-between px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted">
+                  <figcaption className="flex flex-col gap-1 px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                     <span>Fig. 02 — Coursework</span>
-                    <span>Double-click to pin</span>
+                    <span className="normal-case tracking-normal sm:uppercase sm:tracking-index">
+                      <span className="sm:hidden">Swipe codes · Tap to pin</span>
+                      <span className="hidden sm:inline">Double-click to pin</span>
+                    </span>
                   </figcaption>
                 </figure>
               )}

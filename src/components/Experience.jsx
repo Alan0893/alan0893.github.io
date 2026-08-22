@@ -86,12 +86,12 @@ const Experience = () => {
           <div className="border-t border-line" />
         </div>
 
-        <div className="relative mt-12 overflow-hidden border border-line">
+        <figure className="relative mt-12 overflow-hidden border border-line">
           <RunningStickman />
-        </div>
-        <p className="mt-2 font-mono text-[11px] uppercase tracking-index text-muted">
-          Fig. 03 — Life on a loop
-        </p>
+          <figcaption className="border-t border-line px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted">
+            Fig. 03 — Life on a loop
+          </figcaption>
+        </figure>
       </motion.div>
     </section>
   )

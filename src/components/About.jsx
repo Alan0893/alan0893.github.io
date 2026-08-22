@@ -24,13 +24,16 @@ const About = () => {
           <p className="text-muted">{aboutData.bio[1]}</p>
         </div>
 
-        <figure className="mt-12 border border-line bg-paper">
-          <div className="relative h-[280px] overflow-hidden border-b border-line sm:h-[340px]">
+        <figure className="mt-12 overflow-hidden border border-line bg-paper">
+          <div className="relative h-[200px] w-full overflow-hidden border-b border-line sm:h-[340px]">
             <ClusterPlate />
           </div>
-          <figcaption className="flex items-center justify-between gap-4 px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted">
+          <figcaption className="flex flex-col gap-1 px-4 py-3 font-mono text-[11px] uppercase tracking-index text-muted sm:flex-row sm:items-center sm:justify-between sm:gap-4">
             <span>Fig. 01 — Clusters</span>
-            <span>Click or drag · Double-click to reset</span>
+            <span className="normal-case tracking-normal sm:uppercase sm:tracking-index">
+              <span className="sm:hidden">Tap or drag · Double-tap to reset</span>
+              <span className="hidden sm:inline">Click or drag · Double-click to reset</span>
+            </span>
           </figcaption>
         </figure>
 

@@ -21,7 +21,7 @@ const ICONS = {
 
 const Pulley = ({ reverse = false }) => (
   <div
-    className={`relative z-10 hidden h-16 w-16 shrink-0 text-ink sm:block ${
+    className={`relative z-10 hidden h-16 w-16 shrink-0 text-ink md:block ${
       reverse ? 'v4-pulley-reverse' : 'v4-pulley'
     }`}
     aria-hidden="true"
@@ -48,19 +48,19 @@ const Pulley = ({ reverse = false }) => (
 )
 
 const Track = ({ links }) => (
-  <div className="flex shrink-0 items-center gap-10 px-5">
+  <div className="flex shrink-0 items-center gap-6 px-3 sm:gap-10 sm:px-5">
     {links.map((contact, i) => (
       <a
         key={`${contact.name}-${i}`}
         href={contact.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="contact-tile group/item flex items-center gap-2.5 text-ink"
+        className="contact-tile group/item flex shrink-0 items-center gap-2 text-ink sm:gap-2.5"
       >
-        <span className="contact-tile-mark flex h-9 w-9 items-center justify-center border border-line bg-paper transition-colors">
+        <span className="contact-tile-mark flex h-8 w-8 shrink-0 items-center justify-center border border-line bg-paper transition-colors sm:h-9 sm:w-9">
           {ICONS[contact.name]}
         </span>
-        <span className="font-mono text-[11px] uppercase tracking-index transition-colors">
+        <span className="whitespace-nowrap font-mono text-[11px] uppercase tracking-index transition-colors">
           {contact.name}
         </span>
       </a>
@@ -86,7 +86,7 @@ const ConveyorAnimation = () => {
           }}
         />
 
-        <div className="relative flex h-28 items-center gap-3 px-3">
+        <div className="relative flex h-24 items-center gap-2 px-2 sm:h-28 sm:gap-3 sm:px-3">
           <Pulley />
           <div className="min-w-0 flex-1 overflow-hidden">
             <div className="flex w-max v4-belt">
@@ -113,7 +113,10 @@ const ConveyorAnimation = () => {
         }
         .group:hover .v4-belt,
         .group:hover .v4-pulley,
-        .group:hover .v4-pulley-reverse {
+        .group:hover .v4-pulley-reverse,
+        .group:active .v4-belt,
+        .group:active .v4-pulley,
+        .group:active .v4-pulley-reverse {
           animation-play-state: paused;
         }
         @keyframes v4-belt {

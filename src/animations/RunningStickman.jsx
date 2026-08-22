@@ -57,8 +57,8 @@ const RunningStickman = () => {
   const ink = 'var(--color-ink)'
 
   return (
-    <div className="relative w-full h-40 overflow-hidden">
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMid meet">
+    <div className="relative h-28 w-full overflow-hidden sm:h-40">
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMid slice">
         {clouds.map((cloud, i) => (
           <g key={i} opacity="0.25" transform={`translate(${cloud.x}, ${cloud.y})`}>
             <ellipse cx="0" cy="0" rx={cloud.size * 0.6} ry={cloud.size * 0.3} fill={ink} />

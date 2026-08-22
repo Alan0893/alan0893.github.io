@@ -89,7 +89,12 @@ const ClusterPlate = () => {
         if (!members.length) return c
         const mx = members.reduce((s, p) => s + p.x, 0) / members.length
         const my = members.reduce((s, p) => s + p.y, 0) / members.length
-        return { x: c.x + (mx - c.x) * 0.12, y: c.y + (my - c.y) * 0.12 }
+        const x = c.x + (mx - c.x) * 0.12
+        const y = c.y + (my - c.y) * 0.12
+        return {
+          x: Math.min(WIDTH - PAD, Math.max(PAD, x)),
+          y: Math.min(HEIGHT - PAD, Math.max(PAD, y)),
+        }
       })
 
       pointsRef.current = assigned
@@ -123,9 +128,10 @@ const ClusterPlate = () => {
   return (
     <svg
       ref={svgRef}
-      className="h-full w-full cursor-crosshair touch-none select-none"
+      className="block h-full w-full max-w-full cursor-crosshair touch-none select-none"
       viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
+      overflow="hidden"
       aria-hidden="true"
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
@@ -136,23 +142,31 @@ const ClusterPlate = () => {
         reset()
       }}
     >
-      {view.points.map((p) => (
-        <circle
-          key={p.id}
-          cx={p.x}
-          cy={p.y}
-          r="4.5"
-          fill={COLORS[p.cluster]}
-          opacity="0.9"
-        />
-      ))}
-      {view.centroids.map((c, i) => (
-        <g key={i} stroke={COLORS[i]} strokeWidth="1.8" fill="none">
-          <circle cx={c.x} cy={c.y} r="9" />
-          <line x1={c.x - 13} y1={c.y} x2={c.x + 13} y2={c.y} />
-          <line x1={c.x} y1={c.y - 13} x2={c.x} y2={c.y + 13} />
-        </g>
-      ))}
+      <defs>
+        <clipPath id="cluster-plate-clip">
+          <rect width={WIDTH} height={HEIGHT} />
+        </clipPath>
+      </defs>
+      <rect width={WIDTH} height={HEIGHT} fill="var(--color-paper)" />
+      <g clipPath="url(#cluster-plate-clip)">
+        {view.points.map((p) => (
+          <circle
+            key={p.id}
+            cx={p.x}
+            cy={p.y}
+            r="4.5"
+            fill={COLORS[p.cluster]}
+            opacity="0.9"
+          />
+        ))}
+        {view.centroids.map((c, i) => (
+          <g key={i} stroke={COLORS[i]} strokeWidth="1.8" fill="none">
+            <circle cx={c.x} cy={c.y} r="9" />
+            <line x1={c.x - 13} y1={c.y} x2={c.x + 13} y2={c.y} />
+            <line x1={c.x} y1={c.y - 13} x2={c.x} y2={c.y + 13} />
+          </g>
+        ))}
+      </g>
     </svg>
   )
 }
