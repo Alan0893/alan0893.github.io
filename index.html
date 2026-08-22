@@ -5,10 +5,15 @@
       (function () {
         try {
           var stored = localStorage.getItem('theme')
-          var night = stored
-            ? stored === 'night'
-            : window.matchMedia('(prefers-color-scheme: dark)').matches
-          if (night) document.documentElement.classList.add('night')
+          var root = document.documentElement
+          if (stored === 'afternoon') {
+            root.classList.add('afternoon')
+          } else {
+            var night = stored
+              ? stored === 'night'
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+            if (night) root.classList.add('night')
+          }
         } catch (e) {}
       })()
     </script>

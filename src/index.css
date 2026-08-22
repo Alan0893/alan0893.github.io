@@ -40,6 +40,25 @@ body {
   --color-scroll-thumb-hover: #a89884;
 }
 
+html.afternoon {
+  color-scheme: light;
+  --color-paper: #f3ddc4;
+  --color-ink: #2a1810;
+  --color-muted: #8a654c;
+  --color-line: #d4b48f;
+  --color-accent: #c45c28;
+  --color-accent-deep: #9a3f18;
+  --color-paper-rgb: 243 221 196;
+  --color-ink-rgb: 42 24 16;
+  --color-muted-rgb: 138 101 76;
+  --color-line-rgb: 212 180 143;
+  --color-accent-rgb: 196 92 40;
+  --color-accent-deep-rgb: 154 63 24;
+  --color-scroll-track: #ead0b4;
+  --color-scroll-thumb: #c4a078;
+  --color-scroll-thumb-hover: #a88258;
+}
+
 html.night {
   color-scheme: dark;
   --color-paper: #161310;
@@ -96,6 +115,16 @@ html.night {
   opacity: 0.09;
   z-index: 80;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+html.afternoon .paper-noise::before {
+  opacity: 0.12;
+}
+
+html.afternoon .paper-grid {
+  background-image:
+    linear-gradient(rgb(var(--color-ink-rgb) / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-ink-rgb) / 0.05) 1px, transparent 1px);
 }
 
 html.night .paper-noise::before {
@@ -184,6 +213,13 @@ a.index-link:focus-visible,
   fill: var(--color-accent);
   stroke: none;
   animation: skyline-window-flicker 3.6s ease-in-out infinite;
+}
+
+.skyline-window-dusk {
+  fill: var(--color-accent);
+  fill-opacity: 0.72;
+  stroke: var(--color-ink);
+  stroke-opacity: 0.45;
 }
 
 .skyline-star {

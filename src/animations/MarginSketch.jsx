@@ -378,6 +378,51 @@ const DaySky = ({ sun, clouds }) => (
   </>
 )
 
+const GOLD = 'var(--color-accent)'
+
+const AfternoonSky = ({ clouds, water }) => (
+  <>
+    <ellipse cx="268" cy="292" rx="56" ry="56" fill={GOLD} opacity="0.1" />
+    <circle cx="268" cy="292" r="26" fill={GOLD} opacity="0.22" />
+    <circle cx="268" cy="292" r="16" fill={GOLD} opacity="0.55" stroke={GOLD} strokeWidth="1.1" />
+    {[198, 214, 232].map((deg) => {
+      const rad = (deg * Math.PI) / 180
+      return (
+        <line
+          key={deg}
+          x1="268"
+          y1="292"
+          x2={268 + Math.cos(rad) * 48}
+          y2={292 + Math.sin(rad) * 48}
+          stroke={GOLD}
+          strokeWidth="0.9"
+          opacity="0.35"
+        />
+      )
+    })}
+    {clouds.map((cloud, i) => (
+      <g key={i} className="skyline-cloud">
+        <DrawStroke d={cloud.d} delay={cloud.delay} duration={1.8} width={1.05} opacity={0.22} color={GOLD} />
+      </g>
+    ))}
+    {water.map((d, i) => (
+      <path key={i} d={d} fill="none" stroke={GOLD} strokeWidth="0.8" opacity={0.28} />
+    ))}
+  </>
+)
+
+const AfternoonShadows = () => (
+  <g fill={INK} opacity="0.1" stroke="none">
+    <polygon points={`12,${GROUND} 70,${GROUND} 46,${GROUND + 9} -8,${GROUND + 9}`} />
+    <polygon points={`76,${GROUND} 100,${GROUND} 68,${GROUND + 11} 42,${GROUND + 11}`} />
+    <polygon points={`106,${GROUND} 156,${GROUND} 136,${GROUND + 8} 84,${GROUND + 8}`} />
+    <polygon points={`162,${GROUND} 194,${GROUND} 150,${GROUND + 12} 112,${GROUND + 12}`} />
+    <polygon points={`200,${GROUND} 236,${GROUND} 176,${GROUND + 14} 132,${GROUND + 14}`} />
+    <polygon points={`242,${GROUND} 288,${GROUND} 214,${GROUND + 16} 160,${GROUND + 16}`} />
+    <polygon points={`294,${GROUND} 316,${GROUND} 300,${GROUND + 7} 276,${GROUND + 7}`} />
+  </g>
+)
+
 const NightSky = ({ stars, moonPath, water }) => (
   <>
     <ellipse cx="54" cy="52" rx="28" ry="28" fill="var(--color-accent)" opacity="0.08" />
@@ -466,7 +511,7 @@ const NightCraft = () => (
 )
 
 const MarginSketch = () => {
-  const { night } = useTheme()
+  const { night, afternoon } = useTheme()
 
   const scene = useMemo(() => {
     const rand = mulberry(42)
@@ -481,6 +526,10 @@ const MarginSketch = () => {
       moonWater: [
         wobbleLine(28, GROUND + 16, 78, GROUND + 20, nightRand, 6, 1.1),
         wobbleLine(36, GROUND + 30, 70, GROUND + 34, nightRand, 5, 1.3),
+      ],
+      duskWater: [
+        wobbleLine(210, GROUND + 16, 314, GROUND + 20, nightRand, 7, 1.2),
+        wobbleLine(220, GROUND + 30, 308, GROUND + 34, nightRand, 6, 1.4),
       ],
       clouds: [
         { d: cloudPath(56, 72, 34, rand), delay: 5.8 },
@@ -501,6 +550,10 @@ const MarginSketch = () => {
         const wrand = mulberry(130 + b * 17)
         const bias = building.id === 'hancock' || building.id === 'prudential' ? 0.32 : 0.5
         return building.windows.map(() => wrand() > bias)
+      }),
+      duskLit: BUILDINGS.map((building, b) => {
+        const wrand = mulberry(210 + b * 19)
+        return building.windows.map(() => wrand() > 0.82)
       }),
     }
   }, [])
@@ -529,6 +582,8 @@ const MarginSketch = () => {
       >
         {night ? (
           <NightSky stars={scene.stars} moonPath={scene.moon} water={scene.moonWater} />
+        ) : afternoon ? (
+          <AfternoonSky clouds={scene.clouds} water={scene.duskWater} />
         ) : (
           <DaySky sun={scene.sun} clouds={scene.clouds} />
         )}
@@ -581,10 +636,12 @@ const MarginSketch = () => {
             delay={0.35 + i * 0.25}
             duration={1.5}
             width={0.9}
-            opacity={night ? 0.22 : 0.35}
-            color={night ? 'var(--color-accent)' : INK}
+            color={night ? 'var(--color-accent)' : afternoon ? GOLD : INK}
+            opacity={night ? 0.22 : afternoon ? 0.28 : 0.35}
           />
         ))}
+
+        {afternoon && <AfternoonShadows />}
 
         {BUILDINGS.map((building, i) => (
           <g
@@ -597,10 +654,13 @@ const MarginSketch = () => {
             ))}
             {building.windows.map((win, j) => {
               if (night && !scene.lit[i][j]) return null
+              const dusk = afternoon && scene.duskLit[i][j]
               return (
               <rect
                 key={j}
-                className={night ? 'skyline-window-lit' : 'skyline-window'}
+                className={
+                  night ? 'skyline-window-lit' : dusk ? 'skyline-window-dusk' : 'skyline-window'
+                }
                 x={win.x}
                 y={win.y}
                 width={win.w}
