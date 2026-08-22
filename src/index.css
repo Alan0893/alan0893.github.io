@@ -174,31 +174,36 @@ a.index-link:focus-visible,
   border-color: var(--color-accent);
 }
 
-.skyline-moon,
-.skyline-stars {
-  display: none;
-}
-
-html.night .skyline-sun {
-  display: none;
-}
-
-html.night .skyline-moon,
-html.night .skyline-stars {
-  display: block;
-}
-
 .skyline-window {
   fill: none;
   stroke: var(--color-ink);
   opacity: 0.55;
 }
 
-html.night .skyline-window {
+.skyline-window-lit {
   fill: var(--color-accent);
-  fill-opacity: 0.7;
-  stroke: var(--color-accent);
-  opacity: 1;
+  stroke: none;
+  animation: skyline-window-flicker 3.6s ease-in-out infinite;
+}
+
+.skyline-star {
+  animation: skyline-twinkle 2.8s ease-in-out infinite;
+}
+
+.skyline-lamp-glow {
+  animation: skyline-glow 2.4s ease-in-out infinite;
+}
+
+.skyline-beacon {
+  animation: skyline-beacon 1.6s ease-in-out infinite;
+}
+
+.skyline-nav {
+  animation: skyline-nav 0.9s steps(2, end) infinite;
+}
+
+.skyline-nav-late {
+  animation: skyline-nav 0.9s steps(2, end) infinite reverse;
 }
 
 .skyline-draw {
@@ -379,6 +384,32 @@ html.night .skyline-window {
   100% { transform: translate(20px, 690px) scaleX(1); }
 }
 
+@keyframes skyline-twinkle {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes skyline-window-flicker {
+  0%, 86%, 100% { opacity: 1; }
+  90% { opacity: 0.35; }
+  93% { opacity: 1; }
+}
+
+@keyframes skyline-glow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes skyline-beacon {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+@keyframes skyline-nav {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.15; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .skyline-draw {
     animation: none;
@@ -403,7 +434,13 @@ html.night .skyline-window {
   .skyline-stride-b,
   .skyline-idle,
   .skyline-idle-late,
-  .skyline-sit {
+  .skyline-sit,
+  .skyline-star,
+  .skyline-lamp-glow,
+  .skyline-beacon,
+  .skyline-nav,
+  .skyline-nav-late,
+  .skyline-window-lit {
     animation: none;
   }
   .skyline-life {

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { useTheme } from '../theme'
 
 const GROUND = 690
 const INK = 'var(--color-ink)'
@@ -90,15 +91,15 @@ const BUILDINGS = [
     parts: [
       { type: 'rect', x: 106, y: 612, w: 50, h: GROUND - 612 },
       { type: 'poly', points: '106,612 131,590 156,612' },
-      { type: 'rect', x: 124, y: 572, w: 14, h: 18 },
-      { type: 'ellipse', cx: 131, cy: 566, rx: 13, ry: 10, fill: 'color-mix(in srgb, var(--color-accent) 22%, transparent)' },
-      { type: 'line', x1: 131, y1: 556, x2: 131, y2: 546 },
+      { type: 'rect', x: 126, y: 572, w: 10, h: 18 },
+      { type: 'ellipse', cx: 131, cy: 568, rx: 8, ry: 7, fill: 'color-mix(in srgb, var(--color-accent) 22%, transparent)' },
+      { type: 'line', x1: 131, y1: 561, x2: 131, y2: 552 },
+      { type: 'circle', cx: 131, cy: 551, r: 1.6 },
       { type: 'line', x1: 114, y1: 612, x2: 114, y2: 640 },
       { type: 'line', x1: 122, y1: 612, x2: 122, y2: 640 },
       { type: 'line', x1: 131, y1: 612, x2: 131, y2: 640 },
       { type: 'line', x1: 140, y1: 612, x2: 140, y2: 640 },
       { type: 'line', x1: 148, y1: 612, x2: 148, y2: 640 },
-      { type: 'line', x1: 118, y1: GROUND, x2: 144, y2: GROUND },
     ],
     windows: winGrid(112, 648, 4, 1, 7, 10, 12, 16),
   },
@@ -149,20 +150,39 @@ const BUILDINGS = [
   },
 ]
 
-const inkStroke = {
-  fill: PAPER,
-  stroke: INK,
-  strokeWidth: 1.25,
-  strokeLinejoin: 'miter',
-  strokeLinecap: 'square',
-}
+const Part = ({ part, night }) => {
+  const fill = night
+    ? 'color-mix(in srgb, var(--color-ink) 16%, var(--color-paper))'
+    : PAPER
+  const stroke = night
+    ? 'color-mix(in srgb, var(--color-ink) 24%, var(--color-paper))'
+    : INK
+  const strokeWidth = night ? 0.7 : 1.25
 
-const Part = ({ part }) => {
   if (part.type === 'rect') {
-    return <rect x={part.x} y={part.y} width={part.w} height={part.h} {...inkStroke} />
+    return (
+      <rect
+        x={part.x}
+        y={part.y}
+        width={part.w}
+        height={part.h}
+        fill={fill}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        strokeLinejoin="miter"
+      />
+    )
   }
   if (part.type === 'poly') {
-    return <polygon points={part.points} {...inkStroke} />
+    return (
+      <polygon
+        points={part.points}
+        fill={fill}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        strokeLinejoin="miter"
+      />
+    )
   }
   if (part.type === 'ellipse') {
     return (
@@ -171,14 +191,25 @@ const Part = ({ part }) => {
         cy={part.cy}
         rx={part.rx}
         ry={part.ry}
-        fill={part.fill || PAPER}
-        stroke={INK}
-        strokeWidth="1.2"
+        fill={night ? 'var(--color-accent)' : part.fill || PAPER}
+        stroke={night ? 'var(--color-accent)' : INK}
+        strokeWidth={night ? 0 : 1.2}
+        opacity={night ? 0.92 : 1}
       />
     )
   }
   if (part.type === 'circle') {
-    return <circle cx={part.cx} cy={part.cy} r={part.r} fill={PAPER} stroke={INK} strokeWidth="1.2" />
+    return (
+      <circle
+        cx={part.cx}
+        cy={part.cy}
+        r={part.r}
+        fill={night ? 'var(--color-accent)' : PAPER}
+        stroke={night ? 'none' : INK}
+        strokeWidth="1.2"
+        opacity={night ? 0.85 : 1}
+      />
+    )
   }
   return (
     <line
@@ -186,8 +217,8 @@ const Part = ({ part }) => {
       y1={part.y1}
       x2={part.x2}
       y2={part.y2}
-      stroke={INK}
-      strokeWidth="1.2"
+      stroke={night ? 'color-mix(in srgb, var(--color-paper) 28%, transparent)' : INK}
+      strokeWidth={night ? 0.8 : 1.2}
       strokeLinecap="square"
     />
   )
@@ -246,10 +277,10 @@ const Person = ({ pose = 'stand' }) => {
   if (pose === 'sit') {
     return (
       <g fill="none" stroke={INK} strokeWidth="1.15" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="0" cy="-9.2" r="1.9" fill="none" />
-        <path d="M0 -7.2 V-3 H5.5 V0" />
-        <path d="M0 -5 L-3.2 -2.2" />
-        <path d="M0 -5 L3.4 -3" />
+        <circle cx="0" cy="-13" r="1.9" fill="none" />
+        <path d="M0 -11.1 V-7 H6 V0" />
+        <path d="M0 -9 L-3.2 -6.2" />
+        <path d="M0 -9 L3.2 -7.2" />
       </g>
     )
   }
@@ -310,23 +341,146 @@ const Dog = () => (
   </g>
 )
 
-const Boat = () => (
+const Boat = ({ night }) => (
   <g fill={PAPER} stroke={INK} strokeWidth="1.2" strokeLinejoin="miter" strokeLinecap="square">
     <path d="M2 16 L6 22 H24 L26 16 Z" />
     <line x1="14" y1="16" x2="14" y2="2" />
     <path d="M14 3 L14 16 L26 16 Z" fill={PAPER} />
+    {night && (
+      <circle cx="14" cy="2.2" r="1.8" fill="var(--color-accent)" stroke="none" className="skyline-lamp-glow" />
+    )}
+  </g>
+)
+
+const DaySky = ({ sun, clouds }) => (
+  <>
+    <g>
+      <circle cx="286" cy="44" r="11" fill="var(--color-accent)" opacity="0.16" />
+      {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+        <line
+          key={deg}
+          x1="286"
+          y1="44"
+          x2={286 + Math.cos((deg * Math.PI) / 180) * 22}
+          y2={44 + Math.sin((deg * Math.PI) / 180) * 22}
+          stroke="var(--color-accent)"
+          strokeWidth="0.9"
+          opacity="0.45"
+        />
+      ))}
+      <DrawStroke d={sun} delay={0.2} duration={1.4} width={1.15} color="var(--color-accent)" opacity={0.85} />
+    </g>
+    {clouds.map((cloud, i) => (
+      <g key={i} className="skyline-cloud">
+        <DrawStroke d={cloud.d} delay={cloud.delay} duration={1.8} width={1.05} opacity={0.38} />
+      </g>
+    ))}
+  </>
+)
+
+const NightSky = ({ stars, moonPath, water }) => (
+  <>
+    <ellipse cx="54" cy="52" rx="28" ry="28" fill="var(--color-accent)" opacity="0.08" />
+    <path
+      d={moonPath}
+      fill="color-mix(in srgb, var(--color-paper) 78%, var(--color-accent))"
+      stroke="var(--color-accent)"
+      strokeWidth="1.1"
+    />
+    {stars.map((star, i) => (
+      <circle
+        key={i}
+        className="skyline-star"
+        cx={star.x}
+        cy={star.y}
+        r={star.r}
+        fill="var(--color-ink)"
+        stroke="none"
+        style={{ animationDelay: `${star.delay}s`, animationDuration: `${star.dur}s` }}
+      />
+    ))}
+    {water.map((d, i) => (
+      <path
+        key={i}
+        d={d}
+        fill="none"
+        stroke="var(--color-accent)"
+        strokeWidth="0.7"
+        opacity={0.22}
+      />
+    ))}
+  </>
+)
+
+const LAMPS = [
+  { x: 8, dir: 1 },
+  { x: 71, dir: -1 },
+  { x: 103, dir: 1 },
+  { x: 197, dir: -1 },
+  { x: 239, dir: 1 },
+  { x: 291, dir: -1 },
+]
+
+const Lamp = ({ x, dir }) => {
+  const arm = x + dir * 8
+  const armY = GROUND - 38
+  const globeY = GROUND - 29
+  return (
+    <g>
+      <line
+        x1={x}
+        y1={GROUND}
+        x2={x}
+        y2={armY}
+        stroke={INK}
+        strokeWidth="1.2"
+        strokeLinecap="square"
+      />
+      <path
+        d={`M${x} ${armY} H${arm} V${armY + 6}`}
+        fill="none"
+        stroke={INK}
+        strokeWidth="1.2"
+        strokeLinecap="square"
+        strokeLinejoin="round"
+      />
+      <circle
+        className="skyline-lamp-glow"
+        cx={arm}
+        cy={globeY}
+        r="3.2"
+        fill="var(--color-accent)"
+        stroke={INK}
+        strokeWidth="1.2"
+      />
+    </g>
+  )
+}
+
+const NightCraft = () => (
+  <g className="skyline-night-craft" fill="var(--color-accent)" stroke="none">
+    <circle className="skyline-nav" cx="0" cy="0" r="1.35" />
+    <circle cx="5" cy="0.4" r="0.7" opacity="0.45" />
+    <circle className="skyline-nav-late" cx="9" cy="0.2" r="1.1" />
   </g>
 )
 
 const MarginSketch = () => {
+  const { night } = useTheme()
+
   const scene = useMemo(() => {
     const rand = mulberry(42)
+    const nightRand = mulberry(91)
     return {
       ground: `M8 ${GROUND} H318`,
       water: [
         wobbleLine(14, GROUND + 14, 314, GROUND + 18, rand, 11, 1.4),
         wobbleLine(24, GROUND + 28, 300, GROUND + 32, rand, 10, 1.6),
         wobbleLine(40, GROUND + 42, 280, GROUND + 44, rand, 8, 1.2),
+      ],
+      moonWater: [
+        wobbleLine(28, GROUND + 16, 78, GROUND + 20, nightRand, 6, 1.1),
+        wobbleLine(36, GROUND + 30, 70, GROUND + 34, nightRand, 5, 1.3),
       ],
       clouds: [
         { d: cloudPath(56, 72, 34, rand), delay: 5.8 },
@@ -335,6 +489,19 @@ const MarginSketch = () => {
         { d: cloudPath(260, 140, 26, rand), delay: 7.2 },
       ],
       sun: 'M286 44 a10 10 0 1 1 0.1 0',
+      moon: 'M62 38 a12 12 0 1 0 7 18 a9 9 0 1 1 -7 -18 z',
+      stars: Array.from({ length: 52 }, () => ({
+        x: 10 + nightRand() * 300,
+        y: 16 + nightRand() * 250,
+        r: 0.35 + nightRand() * 1.15,
+        delay: nightRand() * 3.2,
+        dur: 1.7 + nightRand() * 2.6,
+      })),
+      lit: BUILDINGS.map((building, b) => {
+        const wrand = mulberry(130 + b * 17)
+        const bias = building.id === 'hancock' || building.id === 'prudential' ? 0.32 : 0.5
+        return building.windows.map(() => wrand() > bias)
+      }),
     }
   }, [])
 
@@ -360,29 +527,13 @@ const MarginSketch = () => {
         fill="none"
         preserveAspectRatio="xMinYMin meet"
       >
-        <g className="skyline-sun">
-          <DrawStroke d={scene.sun} delay={0.2} duration={1.4} width={1.15} color="var(--color-accent)" opacity={0.7} />
-        </g>
-        <g className="skyline-moon" fill="none" stroke="var(--color-accent)" strokeWidth="1.15" opacity="0.85">
-          <path d="M292 36 a11 11 0 1 0 8 16 a8.5 8.5 0 1 1 -8 -16 z" />
-        </g>
-        <g className="skyline-stars" fill="var(--color-ink)" stroke="none" opacity="0.45">
-          <circle cx="48" cy="58" r="1.1" />
-          <circle cx="92" cy="96" r="0.8" />
-          <circle cx="140" cy="42" r="1" />
-          <circle cx="176" cy="88" r="0.7" />
-          <circle cx="228" cy="64" r="1.15" />
-          <circle cx="268" cy="110" r="0.8" />
-          <circle cx="304" cy="76" r="0.9" />
-        </g>
+        {night ? (
+          <NightSky stars={scene.stars} moonPath={scene.moon} water={scene.moonWater} />
+        ) : (
+          <DaySky sun={scene.sun} clouds={scene.clouds} />
+        )}
 
-        {scene.clouds.map((cloud, i) => (
-          <g key={i} className="skyline-cloud">
-            <DrawStroke d={cloud.d} delay={cloud.delay} duration={1.8} width={1.05} opacity={0.38} />
-          </g>
-        ))}
-
-        {life && (
+        {life && !night && (
           <>
             <g className="skyline-flock">
               <g transform="translate(0 0)"><g className="skyline-bird"><Bird /></g></g>
@@ -409,9 +560,30 @@ const MarginSketch = () => {
           </>
         )}
 
+        {life && night && (
+          <>
+            <g className="skyline-plane">
+              <NightCraft />
+            </g>
+            <g className="skyline-plane-late">
+              <NightCraft />
+            </g>
+            <circle className="skyline-beacon" cx="218" cy="318" r="2.1" fill="var(--color-accent)" stroke="none" />
+            <circle className="skyline-beacon" cx="226" cy="322" r="1.4" fill="var(--color-accent)" stroke="none" />
+          </>
+        )}
+
         <DrawStroke d={scene.ground} delay={0.1} duration={1.2} width={1.35} />
         {scene.water.map((d, i) => (
-          <DrawStroke key={i} d={d} delay={0.35 + i * 0.25} duration={1.5} width={0.9} opacity={0.35} />
+          <DrawStroke
+            key={i}
+            d={d}
+            delay={0.35 + i * 0.25}
+            duration={1.5}
+            width={0.9}
+            opacity={night ? 0.22 : 0.35}
+            color={night ? 'var(--color-accent)' : INK}
+          />
         ))}
 
         {BUILDINGS.map((building, i) => (
@@ -421,63 +593,59 @@ const MarginSketch = () => {
             style={{ animationDelay: `${0.55 + i * 0.55}s` }}
           >
             {building.parts.map((part, j) => (
-              <Part key={j} part={part} />
+              <Part key={j} part={part} night={night} />
             ))}
-            {building.windows.map((win, j) => (
+            {building.windows.map((win, j) => {
+              if (night && !scene.lit[i][j]) return null
+              return (
               <rect
                 key={j}
-                className="skyline-window"
+                className={night ? 'skyline-window-lit' : 'skyline-window'}
                 x={win.x}
                 y={win.y}
                 width={win.w}
                 height={win.h}
                 strokeWidth="0.85"
+                style={night ? { animationDelay: `${(j % 7) * 0.45}s` } : undefined}
               />
-            ))}
+              )
+            })}
           </g>
         ))}
 
-        <g className="skyline-rise" style={{ animationDelay: '5.8s' }}>
-          <line x1="72" y1={GROUND} x2="72" y2="656" stroke={INK} strokeWidth="1.2" strokeLinecap="square" />
-          <line x1="72" y1="656" x2="78" y2="656" stroke={INK} strokeWidth="1.2" strokeLinecap="square" />
-          <circle cx="78" cy="653" r="3" fill="none" stroke={INK} strokeWidth="1.2" />
-          <line x1="214" y1={GROUND - 7} x2="232" y2={GROUND - 7} stroke={INK} strokeWidth="1.2" strokeLinecap="square" />
-          <line x1="214" y1={GROUND - 7} x2="214" y2={GROUND} stroke={INK} strokeWidth="1.2" strokeLinecap="square" />
-          <line x1="232" y1={GROUND - 7} x2="232" y2={GROUND} stroke={INK} strokeWidth="1.2" strokeLinecap="square" />
-          <line x1="216" y1={GROUND - 11} x2="230" y2={GROUND - 11} stroke={INK} strokeWidth="1.2" strokeLinecap="square" />
-        </g>
+        {night && (
+          <g className="skyline-rise" style={{ animationDelay: '5.8s' }}>
+            {LAMPS.map((lamp) => (
+              <Lamp key={lamp.x} x={lamp.x} dir={lamp.dir} />
+            ))}
+          </g>
+        )}
 
         <g className="skyline-boat">
           <g transform="translate(28 702)">
-            <Boat />
+            <Boat night={night} />
           </g>
         </g>
 
-        <g transform={`translate(22 ${GROUND})`}>
-          <g className="skyline-life skyline-idle">
-            <Person pose="wave" />
-          </g>
-        </g>
-        <g transform={`translate(30 ${GROUND})`}>
-          <g className="skyline-life skyline-idle-late">
-            <Person />
-          </g>
-        </g>
-        <g transform={`translate(38 ${GROUND})`}>
-          <g className="skyline-life">
-            <Dog />
-          </g>
-        </g>
-        <g transform={`translate(223 ${GROUND - 1})`}>
-          <g className="skyline-life skyline-sit">
-            <Person pose="sit" />
-          </g>
-        </g>
-        <g transform={`translate(132 ${GROUND})`}>
-          <g className="skyline-life skyline-idle">
-            <Person />
-          </g>
-        </g>
+        {!night && (
+          <>
+            <g transform={`translate(22 ${GROUND})`}>
+              <g className="skyline-life skyline-idle">
+                <Person pose="wave" />
+              </g>
+            </g>
+            <g transform={`translate(30 ${GROUND})`}>
+              <g className="skyline-life skyline-idle-late">
+                <Person />
+              </g>
+            </g>
+            <g transform={`translate(38 ${GROUND})`}>
+              <g className="skyline-life">
+                <Dog />
+              </g>
+            </g>
+          </>
+        )}
         {life && (
           <g className="skyline-walker">
             <Person pose="walk" />
