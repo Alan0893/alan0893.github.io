@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
+import MarginSketch from './animations/MarginSketch'
 
 const About = lazy(() => import('./components/About'))
 const Education = lazy(() => import('./components/Education'))
@@ -18,8 +19,9 @@ function App() {
   return (
     <div className="relative min-h-screen paper-grid paper-noise">
       <Navbar />
+      <MarginSketch />
 
-      <main className="relative z-10 lg:pl-[28rem]">
+      <main className="relative z-10 lg:pl-[28rem] xl:pr-80 2xl:pr-96">
         <Hero />
         <Suspense fallback={<LoadingFallback />}>
           <About />
