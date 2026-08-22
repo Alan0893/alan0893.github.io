@@ -54,7 +54,7 @@ const RunningStickman = () => {
   const rightLeg = getLimbPosition(runCycle, false)
   const leftArm = getLimbPosition(runCycle, false)
   const rightArm = getLimbPosition(runCycle, true)
-  const ink = '#1a1614'
+  const ink = 'var(--color-ink)'
 
   return (
     <div className="relative w-full h-40 overflow-hidden">

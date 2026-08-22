@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import footerData from '../data/footer.json'
+import { ThemeToggle } from '../theme'
 
 const navItems = [
   { id: 'about', label: 'About', number: '01' },
@@ -49,13 +50,16 @@ const Navbar = () => {
         >
           Alan Lin
         </button>
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="font-mono text-[11px] uppercase tracking-index text-ink"
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? 'Close' : 'Index'}
-        </button>
+        <div className="flex items-center gap-5">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="font-mono text-[11px] uppercase tracking-index text-ink"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? 'Close' : 'Index'}
+          </button>
+        </div>
       </header>
 
       <aside className="hidden lg:flex fixed inset-y-0 left-0 z-40 w-[28rem] flex-col justify-between overflow-y-auto border-r border-line bg-paper/80 px-10 py-12 backdrop-blur-[2px]">
@@ -116,9 +120,12 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <p className="mt-8 font-mono text-[10px] uppercase tracking-index text-line">
-            v4
-          </p>
+          <div className="mt-8 flex items-center justify-between gap-4">
+            <p className="font-mono text-[10px] uppercase tracking-index text-line">
+              v4
+            </p>
+            <ThemeToggle />
+          </div>
         </div>
       </aside>
 

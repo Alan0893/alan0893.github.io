@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 
 const GROUND = 690
-const INK = '#1a1614'
-const PAPER = '#f4efe6'
+const INK = 'var(--color-ink)'
+const PAPER = 'var(--color-paper)'
 
 const mulberry = (seed) => {
   let a = seed >>> 0
@@ -91,7 +91,7 @@ const BUILDINGS = [
       { type: 'rect', x: 106, y: 612, w: 50, h: GROUND - 612 },
       { type: 'poly', points: '106,612 131,590 156,612' },
       { type: 'rect', x: 124, y: 572, w: 14, h: 18 },
-      { type: 'ellipse', cx: 131, cy: 566, rx: 13, ry: 10, fill: 'rgba(30,64,175,0.18)' },
+      { type: 'ellipse', cx: 131, cy: 566, rx: 13, ry: 10, fill: 'color-mix(in srgb, var(--color-accent) 22%, transparent)' },
       { type: 'line', x1: 131, y1: 556, x2: 131, y2: 546 },
       { type: 'line', x1: 114, y1: 612, x2: 114, y2: 640 },
       { type: 'line', x1: 122, y1: 612, x2: 122, y2: 640 },
@@ -360,7 +360,21 @@ const MarginSketch = () => {
         fill="none"
         preserveAspectRatio="xMinYMin meet"
       >
-        <DrawStroke d={scene.sun} delay={0.2} duration={1.4} width={1.15} color="var(--color-accent)" opacity={0.7} />
+        <g className="skyline-sun">
+          <DrawStroke d={scene.sun} delay={0.2} duration={1.4} width={1.15} color="var(--color-accent)" opacity={0.7} />
+        </g>
+        <g className="skyline-moon" fill="none" stroke="var(--color-accent)" strokeWidth="1.15" opacity="0.85">
+          <path d="M292 36 a11 11 0 1 0 8 16 a8.5 8.5 0 1 1 -8 -16 z" />
+        </g>
+        <g className="skyline-stars" fill="var(--color-ink)" stroke="none" opacity="0.45">
+          <circle cx="48" cy="58" r="1.1" />
+          <circle cx="92" cy="96" r="0.8" />
+          <circle cx="140" cy="42" r="1" />
+          <circle cx="176" cy="88" r="0.7" />
+          <circle cx="228" cy="64" r="1.15" />
+          <circle cx="268" cy="110" r="0.8" />
+          <circle cx="304" cy="76" r="0.9" />
+        </g>
 
         {scene.clouds.map((cloud, i) => (
           <g key={i} className="skyline-cloud">
@@ -412,14 +426,12 @@ const MarginSketch = () => {
             {building.windows.map((win, j) => (
               <rect
                 key={j}
+                className="skyline-window"
                 x={win.x}
                 y={win.y}
                 width={win.w}
                 height={win.h}
-                fill="none"
-                stroke={INK}
                 strokeWidth="0.85"
-                opacity="0.55"
               />
             ))}
           </g>

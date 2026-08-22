@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: '#f4efe6',
-        ink: '#1a1614',
-        muted: '#6f675e',
-        line: '#d6cdc0',
-        accent: '#1e40af',
-        'accent-deep': '#1e3a8a',
+        paper: 'rgb(var(--color-paper-rgb) / <alpha-value>)',
+        ink: 'rgb(var(--color-ink-rgb) / <alpha-value>)',
+        muted: 'rgb(var(--color-muted-rgb) / <alpha-value>)',
+        line: 'rgb(var(--color-line-rgb) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent-rgb) / <alpha-value>)',
+        'accent-deep': 'rgb(var(--color-accent-deep-rgb) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Instrument Serif"', 'Georgia', 'serif'],

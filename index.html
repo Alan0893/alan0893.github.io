@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var night = stored
+            ? stored === 'night'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (night) document.documentElement.classList.add('night')
+        } catch (e) {}
+      })()
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />

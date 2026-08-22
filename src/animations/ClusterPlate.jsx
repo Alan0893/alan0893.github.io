@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 const WIDTH = 768
 const HEIGHT = 340
 const K = 3
-const COLORS = ['#1a1614', '#1e40af', '#6f675e']
+const COLORS = ['var(--color-ink)', 'var(--color-accent)', 'var(--color-muted)']
 const PAD = 18
 
 const rand = (min, max) => min + Math.random() * (max - min)
