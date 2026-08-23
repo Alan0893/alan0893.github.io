@@ -253,8 +253,9 @@ a.index-link:focus-visible,
 }
 
 .skyline-rise {
-  clip-path: inset(100% 0 0 0);
-  animation: skyline-rise 1.05s ease-out forwards;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: skyline-rise 1.05s ease-out both;
 }
 
 .skyline-lamps {
@@ -347,7 +348,14 @@ a.index-link:focus-visible,
 }
 
 @keyframes skyline-rise {
-  to { clip-path: inset(0 0 0 0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes skyline-drift {
@@ -457,7 +465,8 @@ a.index-link:focus-visible,
     stroke-dashoffset: 0;
   }
   .skyline-rise {
-    clip-path: none;
+    opacity: 1;
+    transform: none;
     animation: none;
   }
   .skyline-lamps {

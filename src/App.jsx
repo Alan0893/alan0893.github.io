@@ -21,7 +21,7 @@ function App() {
       <Navbar />
       <MarginSketch />
 
-      <main className="relative z-10 lg:pl-[28rem] xl:pr-80 2xl:pr-96">
+      <main className="relative z-10 lg:pl-[28rem] xl:pr-64 min-[1440px]:pr-80 2xl:pr-96">
         <Hero />
         <Suspense fallback={<LoadingFallback />}>
           <About />

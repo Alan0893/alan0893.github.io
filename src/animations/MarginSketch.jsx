@@ -571,14 +571,16 @@ const MarginSketch = () => {
 
   return (
     <aside
-      className="pointer-events-none fixed inset-y-0 right-0 z-0 hidden w-[22rem] pr-3 pt-14 min-[1440px]:block 2xl:w-[26rem] 2xl:pr-5 2xl:pt-16"
+      className="pointer-events-none fixed inset-y-0 right-0 z-0 hidden h-screen w-64 overflow-visible pr-2 pt-12 xl:block min-[1440px]:w-[22rem] min-[1440px]:pr-3 min-[1440px]:pt-14 2xl:w-[26rem] 2xl:pr-5 2xl:pt-16"
       aria-hidden="true"
     >
       <svg
         viewBox="0 0 320 820"
-        className="h-full w-full overflow-visible"
+        width="100%"
+        height="100%"
+        className="block h-full w-full overflow-visible"
         fill="none"
-        preserveAspectRatio="xMinYMin meet"
+        preserveAspectRatio="xMidYMax meet"
       >
         {night ? (
           <NightSky stars={scene.stars} moonPath={scene.moon} water={scene.moonWater} />
