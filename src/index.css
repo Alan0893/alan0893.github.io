@@ -257,6 +257,11 @@ a.index-link:focus-visible,
   animation: skyline-rise 1.05s ease-out forwards;
 }
 
+.skyline-lamps {
+  opacity: 0;
+  animation: skyline-fade-in 0.35s ease-out forwards;
+}
+
 .skyline-cloud {
   animation: skyline-drift 36s ease-in-out 9s infinite;
 }
@@ -453,6 +458,10 @@ a.index-link:focus-visible,
   }
   .skyline-rise {
     clip-path: none;
+    animation: none;
+  }
+  .skyline-lamps {
+    opacity: 1;
     animation: none;
   }
   .skyline-cloud,

@@ -674,7 +674,7 @@ const MarginSketch = () => {
         ))}
 
         {night && (
-          <g className="skyline-rise" style={{ animationDelay: '5.8s' }}>
+          <g className="skyline-lamps">
             {LAMPS.map((lamp) => (
               <Lamp key={lamp.x} x={lamp.x} dir={lamp.dir} />
             ))}
