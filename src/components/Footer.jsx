@@ -62,7 +62,17 @@ const Footer = () => {
           </p>
         </div>
 
-        <ul className="mt-8 flex gap-6 lg:hidden">
+        <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 lg:hidden">
+          <li>
+            <a
+              href={footerData.resume.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="index-link font-mono text-xs uppercase tracking-index text-ink"
+            >
+              {footerData.resume.name}
+            </a>
+          </li>
           {footerData.socialLinks.map((social) => (
             <li key={social.name}>
               <a

@@ -13,7 +13,15 @@ const Hero = () => {
       <p className="mt-3 text-sm text-muted">
         Catch me bouldering or running from time to time.
       </p>
-      <div className="mt-6 flex gap-5">
+      <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+        <a
+          href={footerData.resume.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="index-link font-mono text-xs uppercase tracking-index text-ink"
+        >
+          {footerData.resume.name}
+        </a>
         {footerData.socialLinks.map((link) => (
           <a
             key={link.name}

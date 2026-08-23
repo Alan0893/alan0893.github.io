@@ -106,7 +106,15 @@ const Navbar = () => {
         </div>
 
         <div>
-          <ul className="space-y-2">
+          <a
+            href={footerData.resume.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="index-link font-mono text-xs uppercase tracking-index text-ink"
+          >
+            {footerData.resume.name}
+          </a>
+          <ul className="mt-4 space-y-2">
             {footerData.socialLinks.map((link) => (
               <li key={link.name}>
                 <a
@@ -155,6 +163,15 @@ const Navbar = () => {
                 </motion.li>
               ))}
             </ul>
+            <a
+              href={footerData.resume.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 block font-mono text-xs uppercase tracking-index text-ink"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {footerData.resume.name} →
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
